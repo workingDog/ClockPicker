@@ -21,6 +21,7 @@
 		C7E544862384B9DF00D0602A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = C7E544852384B9DF00D0602A /* README.md */; };
 		C7E544882384BCD200D0602A /* picture1.png in Resources */ = {isa = PBXBuildFile; fileRef = C7E544872384BCD100D0602A /* picture1.png */; };
 		C7E5448A2384BE6F00D0602A /* License.txt in Resources */ = {isa = PBXBuildFile; fileRef = C7E544892384BE6F00D0602A /* License.txt */; };
+		C7E59C8D2386054000434B06 /* picture2.png in Resources */ = {isa = PBXBuildFile; fileRef = C7E59C8C2386054000434B06 /* picture2.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		C7E544852384B9DF00D0602A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C7E544872384BCD100D0602A /* picture1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = picture1.png; sourceTree = "<group>"; };
 		C7E544892384BE6F00D0602A /* License.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = License.txt; sourceTree = "<group>"; };
+		C7E59C8C2386054000434B06 /* picture2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = picture2.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 		C702953A238207C9003742F4 = {
 			isa = PBXGroup;
 			children = (
+				C7E59C8C2386054000434B06 /* picture2.png */,
 				C7E544892384BE6F00D0602A /* License.txt */,
 				C7E544872384BCD100D0602A /* picture1.png */,
 				C7E544852384B9DF00D0602A /* README.md */,
@@ -170,6 +173,7 @@
 				C7029553238207C9003742F4 /* LaunchScreen.storyboard in Resources */,
 				C7029550238207C9003742F4 /* Preview Assets.xcassets in Resources */,
 				C7E5448A2384BE6F00D0602A /* License.txt in Resources */,
+				C7E59C8D2386054000434B06 /* picture2.png in Resources */,
 				C7E544862384B9DF00D0602A /* README.md in Resources */,
 				C702954D238207C9003742F4 /* Assets.xcassets in Resources */,
 				C7E544882384BCD200D0602A /* picture1.png in Resources */,
