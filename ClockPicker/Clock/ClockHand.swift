@@ -141,6 +141,10 @@ struct ClockHand: View {
     }
 
     private func getDatePos(_ geom: GeometryProxy) -> CGPoint {
+        let midDay = Calendar.current.startOfDay(for: clockDate).addingTimeInterval(12*60)
+        if clockDate > midDay {
+            period = 1
+        }
         let c = getCenter(of: geom.size)
         let degInc: Float = handType == .hour ? 30 : 6
         var value = Calendar.current.component(.hour, from: clockDate)
