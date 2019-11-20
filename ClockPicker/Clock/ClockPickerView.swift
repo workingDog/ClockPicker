@@ -49,10 +49,24 @@ struct ClockPickerView : View {
     }
     
     func asText() -> String {
+        let theMinutes = Calendar.current.component(.minute, from: clockDate)
+        var theHours = Calendar.current.component(.hour, from: clockDate)
+        formatter.dateFormat = "HH:mm"
+        // change the time according to the period setting
         if period == 1 {
-            formatter.dateFormat = "HH:mm"
+            if theHours <= 12 {
+                theHours = theHours + 12
+            }
+            if let newDate = Calendar.current.date(bySettingHour: theHours, minute: theMinutes, second: 0, of: clockDate) {
+                clockDate = newDate
+            }
         } else {
-            formatter.dateFormat = "hh:mm"
+            if theHours > 12 {
+                theHours = theHours - 12
+            }
+            if let newDate = Calendar.current.date(bySettingHour: theHours, minute: theMinutes, second: 0, of: clockDate) {
+                clockDate = newDate
+            }
         }
         return formatter.string(from: clockDate)
     }
