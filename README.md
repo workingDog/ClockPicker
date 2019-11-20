@@ -1,10 +1,6 @@
 
 # SwiftUI Clock Time Picker
 
-
- ![im01](picture1.png)   ![im02](picture2.png) 
-
-
 **ClockPicker** is a SwiftUI view that displays a clock with the hours and minutes hands.
 These hands can be dragged around the clock face to select the desired hour and minutes of your date.
 
@@ -22,3 +18,5 @@ That's it, very simple.
 
 Can be used in SwiftUI ios and mac catalyst applications.
 
+
+![im01](picture1.png)   ![im02](picture2.png) 
