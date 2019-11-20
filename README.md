@@ -10,15 +10,13 @@ These hands can be dragged around the clock face to select the desired hour and 
 
 The main elements are **ClockPickerView.swift** and **ClockTime.swift**, see the demo in **ContenView.swift** for how to use it in your code.
 
-The key to using this *ClockPickerView* in your code is to create a *ClockTime* such as:
+The key to using this *ClockPickerView* in your code is to pass it your Date, such as:
 
-    @ObservedObject var timeObject = ClockTime(date: Date())
-
-and pass it to the *ClockPickerView* as shown in *ContenView.swift*,
-
-    ClockPickerView(clockTime: timeObject)
+    @State var date = Date()
     
-As the clock hands are changed, the selected time can be obtain from the *ClockTime* object.
+    ClockPickerView(date: $date)
+
+As the clock hands are changed, the date hours and minutes are updated.
 
 That's it, very simple.
 

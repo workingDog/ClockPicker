@@ -9,17 +9,28 @@
 import SwiftUI
 
 struct ContentView: View {
-
-    @ObservedObject var timeObject = ClockTime(date: Date())
+    
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
+    @State var date = Date()
+    @State var showTime = false
     
     var body: some View {
-        ClockPickerView(clockTime: timeObject)
+        Group {
+            Button(action: {self.showTime.toggle()} ) { Text("Show time") }
+        }.sheet(isPresented: self.$showTime) {
+            ClockPickerView(date: self.$date).onDisappear(perform: self.showMe)
+        }
     }
- 
+    
+    func showMe() {
+        print("\n----> date: \(date)")
+    }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(date: Date())
     }
 }

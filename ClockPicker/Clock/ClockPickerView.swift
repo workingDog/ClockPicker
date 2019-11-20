@@ -10,11 +10,11 @@ import SwiftUI
 
 
 struct ClockPickerView : View {
-    
+
     @ObservedObject var clockTime: ClockTime
 
-    init(clockTime: ClockTime) {
-        self.clockTime = clockTime
+    init(date: Binding<Date>) {
+        self.clockTime = ClockTime(date: date)
         // to control the AM:PM picker colors
         UISegmentedControl.appearance().selectedSegmentTintColor = .blue
         UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
@@ -28,7 +28,7 @@ struct ClockPickerView : View {
                 ClockFace()
                 ClockHand(clockTime: clockTime, handType: .hour)
                 ClockHand(clockTime: clockTime, handType: .minute)
-                Text(clockTime.clockTimeString).foregroundColor(Color(UIColor.systemBackground))
+                Text(clockTime.asText()).foregroundColor(Color(UIColor.systemBackground))
                 periodPicker.offset(x: 0, y: 60)
             }
             .padding()

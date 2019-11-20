@@ -12,26 +12,16 @@ import SwiftUI
 
 class ClockTime : ObservableObject {
     
+    @Binding var clockDate: Date
+    
     let periodTypes = ["AM", "PM"]
     let calendar = Calendar.current
     let formatter = DateFormatter()
     
-    @Published var clockTimeString = "00:00"
+    @Published var period: Int = 0
     
-    @Published var clockDate = Date() {
-        didSet {
-            self.clockTimeString = asText() // formatter.string(from: clockDate) // <--- this works
-        }
-    }
-    
-    @Published var period: Int = 0 {
-        didSet {
-            clockTimeString = asText() // formatter.string(from: clockDate)  // <--- this does not work
-        }
-    }
-    
-    init(date: Date = Date()) {
-        self.clockDate = date
+    init(date: Binding<Date>) {
+        self._clockDate = date
         self.formatter.dateFormat = "HH:mm"
     }
     
@@ -42,6 +32,6 @@ class ClockTime : ObservableObject {
         if isPM() { theHours = theHours + 12 }
         let theMinutes = calendar.component(.minute, from: clockDate)
         return (theHours <= 9 ? "0" : "") + String(theHours) + ":" + (theMinutes <= 9 ? "0" : "") + String(theMinutes)
-     }
-
+    }
+    
 }
