@@ -1,0 +1,399 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C7029547238207C9003742F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7029546238207C9003742F4 /* AppDelegate.swift */; };
+		C7029549238207C9003742F4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7029548238207C9003742F4 /* SceneDelegate.swift */; };
+		C702954D238207C9003742F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C702954C238207C9003742F4 /* Assets.xcassets */; };
+		C7029550238207C9003742F4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C702954F238207C9003742F4 /* Preview Assets.xcassets */; };
+		C7029553238207C9003742F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7029551238207C9003742F4 /* LaunchScreen.storyboard */; };
+		C702955E23820832003742F4 /* ClockFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = C702955B23820831003742F4 /* ClockFace.swift */; };
+		C702955F23820832003742F4 /* ClockHand.swift in Sources */ = {isa = PBXBuildFile; fileRef = C702955C23820831003742F4 /* ClockHand.swift */; };
+		C702956023820832003742F4 /* ClockPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C702955D23820831003742F4 /* ClockPickerView.swift */; };
+		C746EF4F23838D5700696342 /* ClockTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = C746EF4E23838D5700696342 /* ClockTime.swift */; };
+		C746EF5123838DE000696342 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C746EF5023838DE000696342 /* ContentView.swift */; };
+		C7C5A5192382733A00D1DEA4 /* ClockLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C5A5182382733A00D1DEA4 /* ClockLabelView.swift */; };
+		C7C5A51B238273DF00D1DEA4 /* ClockMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C5A51A238273DF00D1DEA4 /* ClockMarker.swift */; };
+		C7E544862384B9DF00D0602A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = C7E544852384B9DF00D0602A /* README.md */; };
+		C7E544882384BCD200D0602A /* picture1.png in Resources */ = {isa = PBXBuildFile; fileRef = C7E544872384BCD100D0602A /* picture1.png */; };
+		C7E5448A2384BE6F00D0602A /* License.txt in Resources */ = {isa = PBXBuildFile; fileRef = C7E544892384BE6F00D0602A /* License.txt */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		C7029543238207C9003742F4 /* ClockPicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClockPicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7029546238207C9003742F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C7029548238207C9003742F4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		C702954C238207C9003742F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C702954F238207C9003742F4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C7029552238207C9003742F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C7029554238207C9003742F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C702955B23820831003742F4 /* ClockFace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockFace.swift; sourceTree = "<group>"; };
+		C702955C23820831003742F4 /* ClockHand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockHand.swift; sourceTree = "<group>"; };
+		C702955D23820831003742F4 /* ClockPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockPickerView.swift; sourceTree = "<group>"; };
+		C746EF4E23838D5700696342 /* ClockTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockTime.swift; sourceTree = "<group>"; };
+		C746EF5023838DE000696342 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C7A09E5D238208B000B4B4B5 /* ClockPicker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ClockPicker.entitlements; sourceTree = "<group>"; };
+		C7C5A5182382733A00D1DEA4 /* ClockLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockLabelView.swift; sourceTree = "<group>"; };
+		C7C5A51A238273DF00D1DEA4 /* ClockMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockMarker.swift; sourceTree = "<group>"; };
+		C7E544852384B9DF00D0602A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		C7E544872384BCD100D0602A /* picture1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = picture1.png; sourceTree = "<group>"; };
+		C7E544892384BE6F00D0602A /* License.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = License.txt; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C7029540238207C9003742F4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C702953A238207C9003742F4 = {
+			isa = PBXGroup;
+			children = (
+				C7E544892384BE6F00D0602A /* License.txt */,
+				C7E544872384BCD100D0602A /* picture1.png */,
+				C7E544852384B9DF00D0602A /* README.md */,
+				C7029545238207C9003742F4 /* ClockPicker */,
+				C7029544238207C9003742F4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C7029544238207C9003742F4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C7029543238207C9003742F4 /* ClockPicker.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C7029545238207C9003742F4 /* ClockPicker */ = {
+			isa = PBXGroup;
+			children = (
+				C746EF5023838DE000696342 /* ContentView.swift */,
+				C7A09E5D238208B000B4B4B5 /* ClockPicker.entitlements */,
+				C702955A23820831003742F4 /* Clock */,
+				C7029546238207C9003742F4 /* AppDelegate.swift */,
+				C7029548238207C9003742F4 /* SceneDelegate.swift */,
+				C702954C238207C9003742F4 /* Assets.xcassets */,
+				C7029551238207C9003742F4 /* LaunchScreen.storyboard */,
+				C7029554238207C9003742F4 /* Info.plist */,
+				C702954E238207C9003742F4 /* Preview Content */,
+			);
+			path = ClockPicker;
+			sourceTree = "<group>";
+		};
+		C702954E238207C9003742F4 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				C702954F238207C9003742F4 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C702955A23820831003742F4 /* Clock */ = {
+			isa = PBXGroup;
+			children = (
+				C702955D23820831003742F4 /* ClockPickerView.swift */,
+				C702955B23820831003742F4 /* ClockFace.swift */,
+				C702955C23820831003742F4 /* ClockHand.swift */,
+				C7C5A5182382733A00D1DEA4 /* ClockLabelView.swift */,
+				C7C5A51A238273DF00D1DEA4 /* ClockMarker.swift */,
+				C746EF4E23838D5700696342 /* ClockTime.swift */,
+			);
+			path = Clock;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C7029542238207C9003742F4 /* ClockPicker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C7029557238207C9003742F4 /* Build configuration list for PBXNativeTarget "ClockPicker" */;
+			buildPhases = (
+				C702953F238207C9003742F4 /* Sources */,
+				C7029540238207C9003742F4 /* Frameworks */,
+				C7029541238207C9003742F4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ClockPicker;
+			productName = ClockPicker;
+			productReference = C7029543238207C9003742F4 /* ClockPicker.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C702953B238207C9003742F4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "Ringo Wathelet";
+				TargetAttributes = {
+					C7029542238207C9003742F4 = {
+						CreatedOnToolsVersion = 11.3;
+					};
+				};
+			};
+			buildConfigurationList = C702953E238207C9003742F4 /* Build configuration list for PBXProject "ClockPicker" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C702953A238207C9003742F4;
+			productRefGroup = C7029544238207C9003742F4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C7029542238207C9003742F4 /* ClockPicker */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C7029541238207C9003742F4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7029553238207C9003742F4 /* LaunchScreen.storyboard in Resources */,
+				C7029550238207C9003742F4 /* Preview Assets.xcassets in Resources */,
+				C7E5448A2384BE6F00D0602A /* License.txt in Resources */,
+				C7E544862384B9DF00D0602A /* README.md in Resources */,
+				C702954D238207C9003742F4 /* Assets.xcassets in Resources */,
+				C7E544882384BCD200D0602A /* picture1.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C702953F238207C9003742F4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7C5A5192382733A00D1DEA4 /* ClockLabelView.swift in Sources */,
+				C7029547238207C9003742F4 /* AppDelegate.swift in Sources */,
+				C702956023820832003742F4 /* ClockPickerView.swift in Sources */,
+				C7C5A51B238273DF00D1DEA4 /* ClockMarker.swift in Sources */,
+				C702955E23820832003742F4 /* ClockFace.swift in Sources */,
+				C746EF5123838DE000696342 /* ContentView.swift in Sources */,
+				C746EF4F23838D5700696342 /* ClockTime.swift in Sources */,
+				C702955F23820832003742F4 /* ClockHand.swift in Sources */,
+				C7029549238207C9003742F4 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C7029551238207C9003742F4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C7029552238207C9003742F4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C7029555238207C9003742F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C7029556238207C9003742F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C7029558238207C9003742F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ClockPicker/ClockPicker.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"ClockPicker/Preview Content\"";
+				DEVELOPMENT_TEAM = N7KF5K7NET;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = ClockPicker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ringo.com.ClockPicker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C7029559238207C9003742F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ClockPicker/ClockPicker.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"ClockPicker/Preview Content\"";
+				DEVELOPMENT_TEAM = N7KF5K7NET;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = ClockPicker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ringo.com.ClockPicker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C702953E238207C9003742F4 /* Build configuration list for PBXProject "ClockPicker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C7029555238207C9003742F4 /* Debug */,
+				C7029556238207C9003742F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C7029557238207C9003742F4 /* Build configuration list for PBXNativeTarget "ClockPicker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C7029558238207C9003742F4 /* Debug */,
+				C7029559238207C9003742F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C702953B238207C9003742F4 /* Project object */;
+}
