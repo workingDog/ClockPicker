@@ -16,7 +16,7 @@ struct ClockLabelView: View {
     var body: some View {
         VStack {
             Text(marker.label)
-                .font(Font.custom("BradleyHandITCTT-Bold", size: 40))
+                .font(Font.custom("BradleyHandITCTT-Bold", size: 30))
                 .rotationEffect(Angle(degrees: -self.marker.degrees))
                 .padding(.bottom, paddingValue)
         }.rotationEffect(Angle(degrees: marker.degrees))
