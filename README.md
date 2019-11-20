@@ -8,9 +8,9 @@
 **ClockPicker** is a SwiftUI view that displays a clock with the hours and minutes hands.
 These hands can be dragged around the clock face to select the desired hour and minutes of your date.
 
-The main elements are **ClockPickerView.swift** and **ClockTime.swift**, see the demo in **ContenView.swift** for how to use it in your code.
+The main element is **ClockPickerView.swift**, see the demo in **ContenView.swift** for how to use it in your code.
 
-The key to using this *ClockPickerView* in your code is to pass it your Date, such as:
+Use it like a *DatePicker*, such as:
 
     @State var date = Date()
     
