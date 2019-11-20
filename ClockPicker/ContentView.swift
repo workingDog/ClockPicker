@@ -28,7 +28,9 @@ struct ContentView: View {
     
     func getDateString() -> String {
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd HH:mm"
+        formatter.dateFormat = "yyyy-MM-dd h:mm a "
+        formatter.amSymbol = "AM"
+        formatter.pmSymbol = "PM"
         return formatter.string(from: date)
     }
     

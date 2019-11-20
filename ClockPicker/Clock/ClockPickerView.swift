@@ -54,13 +54,15 @@ struct ClockPickerView : View {
         formatter.dateFormat = "HH:mm"
         // change the time according to the period setting
         if period == 1 {
-            if theHours <= 12 {
+            if theHours < 12 {
                 theHours = theHours + 12
             }
+            if theHours == 0 { theHours = 12 }
             if let newDate = Calendar.current.date(bySettingHour: theHours, minute: theMinutes, second: 0, of: clockDate) {
                 clockDate = newDate
             }
         } else {
+            if theHours == 12 { theHours = 0 }
             if theHours > 12 {
                 theHours = theHours - 12
             }
