@@ -36,6 +36,7 @@
 		C702955D23820831003742F4 /* ClockPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockPickerView.swift; sourceTree = "<group>"; };
 		C746EF5023838DE000696342 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C7A09E5D238208B000B4B4B5 /* ClockPicker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ClockPicker.entitlements; sourceTree = "<group>"; };
+		C7A364A82385734400B92AC4 /* temp.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = temp.txt; sourceTree = "<group>"; };
 		C7C5A5182382733A00D1DEA4 /* ClockLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockLabelView.swift; sourceTree = "<group>"; };
 		C7C5A51A238273DF00D1DEA4 /* ClockMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockMarker.swift; sourceTree = "<group>"; };
 		C7E544852384B9DF00D0602A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -57,6 +58,7 @@
 		C702953A238207C9003742F4 = {
 			isa = PBXGroup;
 			children = (
+				C7A364A82385734400B92AC4 /* temp.txt */,
 				C7E544892384BE6F00D0602A /* License.txt */,
 				C7E544872384BCD100D0602A /* picture1.png */,
 				C7E544852384B9DF00D0602A /* README.md */,

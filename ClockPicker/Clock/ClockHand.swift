@@ -109,6 +109,7 @@ struct ClockHand: View {
         if let newDate = Calendar.current.date(bySettingHour: hourValue, minute: theMinutes, second: 0, of: clockDate) {
             clockDate = newDate
         }
+        adjustClockDate()
     }
     
     private func updateClockMinute(_ angleDeg: Float) {
@@ -125,6 +126,29 @@ struct ClockHand: View {
             clockDate = newDate
         }
     }
+    
+    // change the time according to the period setting
+    private func adjustClockDate() {
+        let theMinutes = Calendar.current.component(.minute, from: clockDate)
+        var theHours = Calendar.current.component(.hour, from: clockDate)
+        if period == 1 {
+            if theHours < 12 {
+                theHours = theHours + 12
+            }
+            if theHours == 0 { theHours = 12 }
+            if let newDate = Calendar.current.date(bySettingHour: theHours, minute: theMinutes, second: 0, of: clockDate) {
+                clockDate = newDate
+            }
+        } else {
+            if theHours == 12 { theHours = 0 }
+            if theHours > 12 {
+                theHours = theHours - 12
+            }
+            if let newDate = Calendar.current.date(bySettingHour: theHours, minute: theMinutes, second: 0, of: clockDate) {
+                clockDate = newDate
+            }
+        }
+    }
 
     private func getNewPoint(_ center: CGPoint, _ length: CGFloat) -> CGPoint {
         let newAngle = CGFloat(getAngleRad(center))
@@ -139,9 +163,10 @@ struct ClockHand: View {
         let dy = Float(pos.y - center.y)
         return atan2f(dy, dx)
     }
-
+    
+    // get the hand position given the date
     private func getDatePos(_ geom: GeometryProxy) -> CGPoint {
-        let midDay = Calendar.current.startOfDay(for: clockDate).addingTimeInterval(12*60)
+        let midDay = Calendar.current.startOfDay(for: clockDate).addingTimeInterval(12*60*60)
         if clockDate > midDay {
             period = 1
         }

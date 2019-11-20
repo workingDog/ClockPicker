@@ -41,7 +41,8 @@ struct ClockPickerView : View {
     }
     
     var periodPicker: some View {
-        Picker(selection: $period, label: Text("")) {
+        Picker(selection: Binding<Int>(
+        get: { self.period }, set: { self.adjustClockDate($0) }), label: Text("")) {
             ForEach(0..<periodTypes.count) {
                 Text(self.periodTypes[$0]).tag($0)
             }
@@ -49,10 +50,15 @@ struct ClockPickerView : View {
     }
     
     func asText() -> String {
+        formatter.dateFormat = "HH:mm"
+        return formatter.string(from: clockDate)
+    }
+    
+    // change the time according to the period setting
+    func adjustClockDate(_ value: Int) {
+        self.period = value
         let theMinutes = Calendar.current.component(.minute, from: clockDate)
         var theHours = Calendar.current.component(.hour, from: clockDate)
-        formatter.dateFormat = "HH:mm"
-        // change the time according to the period setting
         if period == 1 {
             if theHours < 12 {
                 theHours = theHours + 12
@@ -70,7 +76,6 @@ struct ClockPickerView : View {
                 clockDate = newDate
             }
         }
-        return formatter.string(from: clockDate)
     }
-    
+     
 }

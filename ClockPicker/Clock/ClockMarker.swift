@@ -21,7 +21,7 @@ struct ClockMarker: Hashable {
     
     static func AMlabelSet() -> [ClockMarker] {
         return [
-            ClockMarker(degrees: 0, label: "12"),
+            ClockMarker(degrees: 0, label: "0"),
             ClockMarker(degrees: 30, label: "1"),
             ClockMarker(degrees: 60, label: "2"),
             ClockMarker(degrees: 90, label: "3"),
@@ -38,7 +38,7 @@ struct ClockMarker: Hashable {
     
     static func PMlabelSet() -> [ClockMarker] {
         return [
-            ClockMarker(degrees: 0, label: "0"),
+            ClockMarker(degrees: 0, label: "12"),
             ClockMarker(degrees: 30, label: "13"),
             ClockMarker(degrees: 60, label: "14"),
             ClockMarker(degrees: 90, label: "15"),
