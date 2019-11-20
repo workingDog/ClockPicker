@@ -13,7 +13,7 @@ struct ClockHand: View {
     
     @Binding var clockDate: Date    // the date
     let handType: HandType          // hour or minute
-    @Binding var period: Int
+    @Binding var period: Int        // 0=AM or 1=PM
 
     @State private var prev = CGPoint.zero
     @State private var pos = CGPoint.zero
@@ -72,7 +72,7 @@ struct ClockHand: View {
     func startHandPos(_ geom: GeometryProxy) {
         let center = getCenter(of: geom.size)
         prev = CGPoint.zero
-        // give the hand the start position
+        // place the hands at their start position
         switch handType {
             case .hour: pos = getDatePos(geom)
             case .minute: pos = getDatePos(geom)
@@ -164,12 +164,12 @@ struct ClockHand: View {
         return atan2f(dy, dx)
     }
     
-    // get the hand position given the date
+    // return the hand position given the date
     private func getDatePos(_ geom: GeometryProxy) -> CGPoint {
         let midDay = Calendar.current.startOfDay(for: clockDate).addingTimeInterval(12*60*60)
-        if clockDate > midDay {
-            period = 1
-        }
+        // AM or PM
+        period = clockDate > midDay ? 1 : 0
+
         let c = getCenter(of: geom.size)
         let degInc: Float = handType == .hour ? 30 : 6
         var value = Calendar.current.component(.hour, from: clockDate)
