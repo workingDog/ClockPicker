@@ -97,11 +97,10 @@ struct ClockHand: View {
         let timeValue = theAngle/30
         var hourValue = Int((timeValue+0.5).rounded(.down))
         // adjust for 12 oclock
-        if hourValue == 0 { hourValue = 12 }
         if period == 1 {
             hourValue = hourValue + 12
         }
-        if hourValue == 24 { hourValue = 0 }
+        if hourValue == 0 || hourValue == 24 { hourValue = 12 }
         let theMinutes = Calendar.current.component(.minute, from: clockDate)
         // update the clocktime
         if let newDate = Calendar.current.date(bySettingHour: hourValue, minute: theMinutes, second: 0, of: clockDate) {
