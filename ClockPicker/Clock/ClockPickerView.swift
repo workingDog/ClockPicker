@@ -29,7 +29,7 @@ struct ClockPickerView : View {
         Group {
             ZStack {
                 Circle().stroke(Color.blue)
-                ClockFace()
+                ClockFace(period: $period)
                 ClockHand(clockDate: $clockDate, handType: .hour, period: $period)
                 ClockHand(clockDate: $clockDate, handType: .minute, period: $period)
                 Text(asText()).foregroundColor(Color(UIColor.systemBackground))

@@ -10,6 +10,8 @@ import SwiftUI
 
 struct ClockFace: View {
     
+    @Binding var period: Int
+    
     var body: some View {
         GeometryReader { geometry in
             
@@ -25,7 +27,7 @@ struct ClockFace: View {
             
             // the hour labels
             ZStack {
-                ForEach(ClockMarker.labelSet(), id: \.self) { marker in
+                ForEach(self.period == 1 ? ClockMarker.PMlabelSet() : ClockMarker.AMlabelSet(), id: \.self) { marker in
                     ClockLabelView(marker: marker, paddingValue: CGFloat(geometry.size.width * 0.80))
                         .position(CGPoint(x: geometry.size.width / 2, y: geometry.size.height / 2))
                 }
