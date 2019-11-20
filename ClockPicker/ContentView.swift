@@ -9,9 +9,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    
+
     @State var date = Date()
     @State var showTime = false
     
