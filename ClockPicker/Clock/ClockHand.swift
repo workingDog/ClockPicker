@@ -38,7 +38,6 @@ struct ClockHand: View {
                 let w = 0.08 * min(geometry.size.width, geometry.size.height)
                 path.addRoundedRect(in: CGRect(x: center.x-w, y: center.y-w/2, width: w*2, height: w), cornerSize: CGSize(width: w/2, height: w/2))
             }.fill(self.handType.color)
-            .accentColor(self.period == 1 ? .gray : .black) // trick to force a refresh when period changes
             
             Path { path in
                 let center = self.getCenter(of: geometry.size)
@@ -54,7 +53,7 @@ struct ClockHand: View {
                 }
             }.stroke(style: StrokeStyle(lineWidth: self.handType.width, lineCap: .round))
             .fill(self.handType.color)
-                .onAppear(perform: { self.startHandPos(self.getCenter(of: geometry.size)) })
+            .onAppear(perform: { self.startHandPos(self.getCenter(of: geometry.size)) })
 
             // the dragging handle
             self.dragHandle.position(self.handlePos).gesture(drag)

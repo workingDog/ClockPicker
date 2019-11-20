@@ -15,6 +15,7 @@ struct ClockPickerView : View {
     
     @State var period: Int = 0
     let periodTypes = ["AM", "PM"]
+    let formatter = DateFormatter()
 
     init(date: Binding<Date>) {
         self._clockDate = date
@@ -31,14 +32,14 @@ struct ClockPickerView : View {
                 ClockFace()
                 ClockHand(clockDate: $clockDate, handType: .hour, period: $period)
                 ClockHand(clockDate: $clockDate, handType: .minute, period: $period)
-                Text(dateAsText()).foregroundColor(Color(UIColor.systemBackground))
+                Text(asText()).foregroundColor(Color(UIColor.systemBackground))
                 periodPicker.offset(x: 0, y: 60)
             }
             .padding()
             .aspectRatio(1, contentMode: .fit)
         }
     }
-
+    
     var periodPicker: some View {
         Picker(selection: $period, label: Text("")) {
             ForEach(0..<periodTypes.count) {
@@ -47,17 +48,13 @@ struct ClockPickerView : View {
         }.pickerStyle(SegmentedPickerStyle()).scaledToFit()
     }
     
-    func dateAsText() -> String {
-        let formatter = DateFormatter()
-        // this is to force a change in the text
+    func asText() -> String {
         if period == 1 {
             formatter.dateFormat = "HH:mm"
         } else {
-           formatter.dateFormat = "hh:mm"
+            formatter.dateFormat = "hh:mm"
         }
-        let str = formatter.string(from: clockDate)
-        print("\n---> str: \(str)")
-        return str
+        return formatter.string(from: clockDate)
     }
- 
+    
 }
