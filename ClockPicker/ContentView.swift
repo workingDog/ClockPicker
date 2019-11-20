@@ -9,20 +9,27 @@
 import SwiftUI
 
 struct ContentView: View {
-
+ 
     @State var date = Date()
     @State var showTime = false
     
     var body: some View {
         Group {
-            Button(action: {self.showTime.toggle()} ) { Text("Show time") }
+            Button(action: {self.showTime.toggle()} ) {
+                VStack {
+                    Text("Show time")
+                    Text(self.getDateString())
+                }
+            }
         }.sheet(isPresented: self.$showTime) {
-            ClockPickerView(date: self.$date).onDisappear(perform: self.showMe)
+            ClockPickerView(date: self.$date)
         }
     }
     
-    func showMe() {
-        print("\n----> date: \(date)")
+    func getDateString() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm"
+        return formatter.string(from: date)
     }
     
 }

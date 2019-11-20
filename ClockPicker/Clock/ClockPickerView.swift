@@ -11,10 +11,13 @@ import SwiftUI
 
 struct ClockPickerView : View {
 
-    @ObservedObject var clockTime: ClockTime
+    @Binding var clockDate: Date
+    
+    @State var period: Int = 0
+    let periodTypes = ["AM", "PM"]
 
     init(date: Binding<Date>) {
-        self.clockTime = ClockTime(date: date)
+        self._clockDate = date
         // to control the AM:PM picker colors
         UISegmentedControl.appearance().selectedSegmentTintColor = .blue
         UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
@@ -26,9 +29,9 @@ struct ClockPickerView : View {
             ZStack {
                 Circle().stroke(Color.blue)
                 ClockFace()
-                ClockHand(clockTime: clockTime, handType: .hour)
-                ClockHand(clockTime: clockTime, handType: .minute)
-                Text(clockTime.asText()).foregroundColor(Color(UIColor.systemBackground))
+                ClockHand(clockDate: $clockDate, handType: .hour, period: $period)
+                ClockHand(clockDate: $clockDate, handType: .minute, period: $period)
+                Text(dateAsText()).foregroundColor(Color(UIColor.systemBackground))
                 periodPicker.offset(x: 0, y: 60)
             }
             .padding()
@@ -37,11 +40,24 @@ struct ClockPickerView : View {
     }
 
     var periodPicker: some View {
-        Picker(selection: self.$clockTime.period, label: Text("")) {
-            ForEach(0..<self.clockTime.periodTypes.count) {
-                Text(self.clockTime.periodTypes[$0]).tag($0)
+        Picker(selection: $period, label: Text("")) {
+            ForEach(0..<periodTypes.count) {
+                Text(self.periodTypes[$0]).tag($0)
             }
         }.pickerStyle(SegmentedPickerStyle()).scaledToFit()
+    }
+    
+    func dateAsText() -> String {
+        let formatter = DateFormatter()
+        // this is to force a change in the text
+        if period == 1 {
+            formatter.dateFormat = "HH:mm"
+        } else {
+           formatter.dateFormat = "hh:mm"
+        }
+        let str = formatter.string(from: clockDate)
+        print("\n---> str: \(str)")
+        return str
     }
  
 }

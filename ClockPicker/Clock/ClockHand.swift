@@ -11,8 +11,9 @@ import SwiftUI
 
 struct ClockHand: View {
     
-    @ObservedObject var clockTime: ClockTime    // the time object
-    let handType: HandType                      // hour or minute
+    @Binding var clockDate: Date    // the date
+    let handType: HandType          // hour or minute
+    @Binding var period: Int
 
     @State private var prev = CGPoint.zero
     @State private var pos = CGPoint.zero
@@ -37,7 +38,7 @@ struct ClockHand: View {
                 let w = 0.08 * min(geometry.size.width, geometry.size.height)
                 path.addRoundedRect(in: CGRect(x: center.x-w, y: center.y-w/2, width: w*2, height: w), cornerSize: CGSize(width: w/2, height: w/2))
             }.fill(self.handType.color)
-            .accentColor(self.clockTime.isPM() ? .gray : .black) // trick to force a refresh when period changes
+            .accentColor(self.period == 1 ? .gray : .black) // trick to force a refresh when period changes
             
             Path { path in
                 let center = self.getCenter(of: geometry.size)
@@ -98,14 +99,14 @@ struct ClockHand: View {
         var hourValue = Int((timeValue+0.5).rounded(.down))
         // adjust for 12 oclock
         if hourValue == 0 { hourValue = 12 }
-        if clockTime.isPM() {
+        if period == 1 {
             hourValue = hourValue + 12
         }
         if hourValue == 24 { hourValue = 0 }
-        let theMinutes = clockTime.calendar.component(.minute, from: clockTime.clockDate)
+        let theMinutes = Calendar.current.component(.minute, from: clockDate)
         // update the clocktime
-        if let newDate = clockTime.calendar.date(bySettingHour: hourValue, minute: theMinutes, second: 0, of: clockTime.clockDate) {
-            clockTime.clockDate = newDate
+        if let newDate = Calendar.current.date(bySettingHour: hourValue, minute: theMinutes, second: 0, of: clockDate) {
+            clockDate = newDate
         }
     }
     
@@ -117,10 +118,10 @@ struct ClockHand: View {
         var minuteValue = Int((timeValue+0.5).rounded(.down))
         // adjust for 12 oclock
         if minuteValue == 60 { minuteValue = 0 }
-        let theHours = clockTime.calendar.component(.hour, from: clockTime.clockDate)
+        let theHours = Calendar.current.component(.hour, from: clockDate)
         // update the clocktime
-        if let newDate = clockTime.calendar.date(bySettingHour: theHours, minute: minuteValue, second: 0, of: clockTime.clockDate) {
-            clockTime.clockDate = newDate
+        if let newDate = Calendar.current.date(bySettingHour: theHours, minute: minuteValue, second: 0, of: clockDate) {
+            clockDate = newDate
         }
     }
 
@@ -148,6 +149,7 @@ struct ClockHand: View {
     private func getCenter(of size: CGSize) -> CGPoint {
         return CGPoint(x: size.width / 2, y: size.height / 2)
     }
+    
 }
 
 // --------------------------------------------------------------------

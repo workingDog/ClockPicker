@@ -15,7 +15,6 @@
 		C702955E23820832003742F4 /* ClockFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = C702955B23820831003742F4 /* ClockFace.swift */; };
 		C702955F23820832003742F4 /* ClockHand.swift in Sources */ = {isa = PBXBuildFile; fileRef = C702955C23820831003742F4 /* ClockHand.swift */; };
 		C702956023820832003742F4 /* ClockPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C702955D23820831003742F4 /* ClockPickerView.swift */; };
-		C746EF4F23838D5700696342 /* ClockTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = C746EF4E23838D5700696342 /* ClockTime.swift */; };
 		C746EF5123838DE000696342 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C746EF5023838DE000696342 /* ContentView.swift */; };
 		C7C5A5192382733A00D1DEA4 /* ClockLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C5A5182382733A00D1DEA4 /* ClockLabelView.swift */; };
 		C7C5A51B238273DF00D1DEA4 /* ClockMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C5A51A238273DF00D1DEA4 /* ClockMarker.swift */; };
@@ -35,7 +34,6 @@
 		C702955B23820831003742F4 /* ClockFace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockFace.swift; sourceTree = "<group>"; };
 		C702955C23820831003742F4 /* ClockHand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockHand.swift; sourceTree = "<group>"; };
 		C702955D23820831003742F4 /* ClockPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockPickerView.swift; sourceTree = "<group>"; };
-		C746EF4E23838D5700696342 /* ClockTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockTime.swift; sourceTree = "<group>"; };
 		C746EF5023838DE000696342 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C7A09E5D238208B000B4B4B5 /* ClockPicker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ClockPicker.entitlements; sourceTree = "<group>"; };
 		C7C5A5182382733A00D1DEA4 /* ClockLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockLabelView.swift; sourceTree = "<group>"; };
@@ -107,7 +105,6 @@
 				C702955C23820831003742F4 /* ClockHand.swift */,
 				C7C5A5182382733A00D1DEA4 /* ClockLabelView.swift */,
 				C7C5A51A238273DF00D1DEA4 /* ClockMarker.swift */,
-				C746EF4E23838D5700696342 /* ClockTime.swift */,
 			);
 			path = Clock;
 			sourceTree = "<group>";
@@ -192,7 +189,6 @@
 				C7C5A51B238273DF00D1DEA4 /* ClockMarker.swift in Sources */,
 				C702955E23820832003742F4 /* ClockFace.swift in Sources */,
 				C746EF5123838DE000696342 /* ContentView.swift in Sources */,
-				C746EF4F23838D5700696342 /* ClockTime.swift in Sources */,
 				C702955F23820832003742F4 /* ClockHand.swift in Sources */,
 				C7029549238207C9003742F4 /* SceneDelegate.swift in Sources */,
 			);
