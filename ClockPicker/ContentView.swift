@@ -11,6 +11,8 @@ import SwiftUI
 struct ContentView: View {
  
     @State var date = Date()
+        //Calendar.current.date(bySettingHour: 0, minute: 15, second: 0, of: Date())!
+        //Date()
     @State var showTime = false
     
     var body: some View {
@@ -25,7 +27,7 @@ struct ContentView: View {
             ClockPickerView(date: self.$date)
         }
     }
-    
+
     func getDateString() -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd h:mm a "

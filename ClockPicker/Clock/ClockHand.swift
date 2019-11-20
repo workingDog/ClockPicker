@@ -42,7 +42,7 @@ struct ClockHand: View {
             Path { path in
                 let center = self.getCenter(of: geometry.size)
                 path.move(to: center)
-                let length = self.handType.ratio * min(geometry.size.width, geometry.size.height) / 2
+                let length = self.handType.ratio * self.getRadius(geometry.size)
                 let theTip = self.getNewPoint(center, length)
                 let handlePoint = self.getNewPoint(center, length-(length * 0.3))
                 path.addLine(to: theTip)
@@ -53,7 +53,7 @@ struct ClockHand: View {
                 }
             }.stroke(style: StrokeStyle(lineWidth: self.handType.width, lineCap: .round))
             .fill(self.handType.color)
-            .onAppear(perform: { self.startHandPos(self.getCenter(of: geometry.size)) })
+            .onAppear(perform: { self.startHandPos(geometry) })
 
             // the dragging handle
             self.dragHandle.position(self.handlePos).gesture(drag)
@@ -69,12 +69,13 @@ struct ClockHand: View {
         }
     }
     
-    func startHandPos(_ center: CGPoint) {
+    func startHandPos(_ geom: GeometryProxy) {
+        let center = getCenter(of: geom.size)
         prev = CGPoint.zero
-        // give the hand a start position
+        // give the hand the start position
         switch handType {
-            case .hour: pos = CGPoint(x: 200, y: 0)
-            case .minute: pos = CGPoint(x: 800, y: 0)
+            case .hour: pos = getDatePos(geom)
+            case .minute: pos = getDatePos(geom)
         }
         updateTime(center)
         prev = pos
@@ -139,6 +140,21 @@ struct ClockHand: View {
         return atan2f(dy, dx)
     }
 
+    private func getDatePos(_ geom: GeometryProxy) -> CGPoint {
+        let c = getCenter(of: geom.size)
+        let degInc: Float = handType == .hour ? 30 : 6
+        var value = Calendar.current.component(.hour, from: clockDate)
+        if handType == .minute {
+            value = Calendar.current.component(.minute, from: clockDate) 
+        }
+        let angleDeg = 180 - (Float(value) * degInc)
+        let angleRad = Double(angleDeg) * Double.pi / 180
+        let r = getRadius(geom.size)
+        let x = Double(c.x) + Double(r) * sin(angleRad)
+        let y = Double(c.y) + Double(r) * cos(angleRad)
+        return CGPoint(x: x, y: y)
+    }
+
     private func normalise(_ angleDeg: Float) -> Float {
         // to have 12 oclock as zero degrees
         let angl = angleDeg + 90
@@ -148,6 +164,10 @@ struct ClockHand: View {
     
     private func getCenter(of size: CGSize) -> CGPoint {
         return CGPoint(x: size.width / 2, y: size.height / 2)
+    }
+    
+    private func getRadius(_ size: CGSize) -> CGFloat {
+        return min(size.width, size.height) / 2
     }
     
 }
