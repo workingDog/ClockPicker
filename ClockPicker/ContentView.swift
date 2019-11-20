@@ -10,7 +10,8 @@ import SwiftUI
 
 struct ContentView: View {
  
-    @State var date = Calendar.current.date(bySettingHour: 0, minute: 45, second: 0, of: Date())!
+    @State var date = Date()
+        //Calendar.current.date(bySettingHour: 0, minute: 45, second: 0, of: Date())!
         //Date()
     @State var showTime = false
     
