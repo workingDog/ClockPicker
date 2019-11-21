@@ -23,7 +23,7 @@ struct ClockPickerView : View {
     let periodTypes = ["AM", "PM"]
     let formatter = DateFormatter()
 
-    init(date: Binding<Date>, options: ClockLooks) {
+    init(date: Binding<Date>, options: ClockLooks = ClockLooks()) {
         self._clockDate = date
         self.options = options
         // to control the AM:PM picker colors
