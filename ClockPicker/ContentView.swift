@@ -14,29 +14,44 @@ struct ContentView: View {
     @State var showTime = false
     
     @ObservedObject var options = ClockLooks()
-    
+  
     var body: some View {
-        Group {
-            Button(action: {self.showTime.toggle()} ) {
+        NavigationView {
+            NavigationLink(destination: ClockPickerView(date: self.$date, options: self.options)) {
                 VStack {
                     Text("Show time")
                     Text(self.getDateString())
                 }
             }
-        }.sheet(isPresented: self.$showTime) {
-            ClockPickerView(date: self.$date, options: self.options)
-        }
-        .onAppear(perform: loadData)
+        }.navigationViewStyle(StackNavigationViewStyle())
+         .onAppear(perform: loadData)
     }
+    
+//    var body: some View {
+//        Group {
+//            Button(action: {self.showTime.toggle()} ) {
+//                VStack {
+//                    Text("Show time")
+//                    Text(self.getDateString())
+//                }
+//            }
+//        }.sheet(isPresented: self.$showTime) {
+//            ClockPickerView(date: self.$date, options: self.options)
+//        }
+//        .onAppear(perform: loadData)
+//    }
 
     func loadData() {
         options.backgroundColor = .yellow
-        options.tickMarkColor = .blue
+        options.hourTickMarkColor = .blue
+        options.hourTickMarkWidth = CGFloat(8)
+        options.minuteDotMarkSize = CGFloat(4)
+        options.minuteDotMarkColor = .black
         options.hourHandColor = .blue
         options.minuteHandColor = .blue
         options.labelColor = .black
         options.labelFont = Font.custom("Didot-Bold", size: 30)
-        options.circleWidth = CGFloat(20)
+        options.circleWidth = CGFloat(2)
         options.hourHandleColor = .blue
         options.minuteHandleColor = .blue
         options.centerBackgroundColor = .blue
@@ -44,6 +59,7 @@ struct ContentView: View {
         options.hourHandWidth = CGFloat(10)
         options.minuteHandWidth = CGFloat(8)
         options.handleSize = CGFloat(35)
+        options.ampmTintColor = UIColor.blue
     }
     
 

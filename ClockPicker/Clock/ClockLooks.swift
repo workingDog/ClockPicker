@@ -14,11 +14,14 @@ class ClockLooks : ObservableObject {
     
     @Published var backgroundColor: Color = Color.clear
     
-    @Published var circleColor: Color = Color.blue
+    @Published var circleColor: Color = Color.primary
     @Published var circleWidth: CGFloat = CGFloat(2)
     
-    @Published var tickMarkColor: Color = Color.primary
-    @Published var tickMarkWidth: CGFloat = CGFloat(3)
+    @Published var hourTickMarkColor: Color = Color.primary
+    @Published var hourTickMarkWidth: CGFloat = CGFloat(4)
+    
+    @Published var minuteDotMarkColor: Color = Color.primary
+    @Published var minuteDotMarkSize: CGFloat = CGFloat(4)
     
     @Published var labelColor: Color = Color.primary
     @Published var labelFont: Font = Font.custom("Didot-Bold", size: 30)
@@ -41,11 +44,11 @@ class ClockLooks : ObservableObject {
     @Published var minuteRatio: CGFloat = 0.92
 
     @Published var centerTextFont: Font = Font.custom("Helvetica", size: 20)
-    @Published var centerBackgroundColor: Color = Color.green
+    @Published var centerBackgroundColor: Color = Color.primary
     @Published var centerForegroundColor: Color = Color(UIColor.systemBackground)
     
     @Published var ampmSelectedColor: UIColor = UIColor.white
-    @Published var ampmNormalColor: UIColor = UIColor.blue
-    @Published var ampmTintColor: UIColor = UIColor.blue
+    @Published var ampmNormalColor: UIColor = UIColor.black
+    @Published var ampmTintColor: UIColor = UIColor.black
     
 }
