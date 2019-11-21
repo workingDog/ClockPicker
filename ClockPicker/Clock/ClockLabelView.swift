@@ -13,18 +13,16 @@ struct ClockLabelView: View {
     let marker: ClockMarker
     let paddingValue: CGFloat
     
+    @ObservedObject var options = ClockLooks()
+    
     var body: some View {
         VStack {
             Text(marker.label)
-                .font(Font.custom("BradleyHandITCTT-Bold", size: 30))
+                .foregroundColor(options.labelColor)
+                .font(options.labelFont)
                 .rotationEffect(Angle(degrees: -self.marker.degrees))
                 .padding(.bottom, paddingValue)
         }.rotationEffect(Angle(degrees: marker.degrees))
     }
-    
-    // other nice fonts
-    // "BodoniSvtyTwoITCTT-BookIta"
-    // "Zapfino"
-    // "SnellRoundhand-Bold"
-    
+
 }

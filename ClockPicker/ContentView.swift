@@ -13,6 +13,8 @@ struct ContentView: View {
     @State var date = Date()
     @State var showTime = false
     
+    @ObservedObject var options = ClockLooks()
+    
     var body: some View {
         Group {
             Button(action: {self.showTime.toggle()} ) {
@@ -22,8 +24,16 @@ struct ContentView: View {
                 }
             }
         }.sheet(isPresented: self.$showTime) {
-            ClockPickerView(date: self.$date)
+            ClockPickerView(date: self.$date, options: self.options)
         }
+        .onAppear(perform: loadData)
+    }
+    
+    func loadData() {
+      //  options.backgroundColor = Color.pink
+      //  options.tickMarkColor = Color.red
+      //  options.hourHandColor = .red
+      //  options.minuteHandColor = .yellow
     }
 
     func getDateString() -> String {

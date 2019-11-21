@@ -9,30 +9,38 @@
 import SwiftUI
 
 
+enum HandType {
+    case hour
+    case minute
+}
+
 struct ClockPickerView : View {
 
     @Binding var clockDate: Date
+    @ObservedObject var options = ClockLooks()
     
     @State var period: Int = 0
     let periodTypes = ["AM", "PM"]
     let formatter = DateFormatter()
 
-    init(date: Binding<Date>) {
+    init(date: Binding<Date>, options: ClockLooks) {
         self._clockDate = date
+        self.options = options
         // to control the AM:PM picker colors
-        UISegmentedControl.appearance().selectedSegmentTintColor = .blue
-        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
-        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.blue], for: .normal)
+        UISegmentedControl.appearance().selectedSegmentTintColor = self.options.ampmTintColor
+        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: self.options.ampmSelectedColor], for: .selected)
+        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: self.options.ampmNormalColor], for: .normal)
     }
     
     var body: some View {
         Group {
             ZStack {
-                Circle().stroke(Color.blue)
-                ClockFace(period: $period)
-                ClockHand(clockDate: $clockDate, handType: .hour, period: $period)
-                ClockHand(clockDate: $clockDate, handType: .minute, period: $period)
-                Text(asText()).foregroundColor(Color(UIColor.systemBackground))
+                Circle().stroke(options.circleColor, lineWidth: options.circleWidth)
+                .overlay(Circle().fill(options.backgroundColor))
+                ClockFace(period: $period, options: options)
+                ClockHand(clockDate: $clockDate, handType: .hour, period: $period, options: options)
+                ClockHand(clockDate: $clockDate, handType: .minute, period: $period, options: options)
+                Text(asText()).foregroundColor(options.centerForegroundColor)
                 periodPicker.offset(x: 0, y: 60)
             }
             .padding()

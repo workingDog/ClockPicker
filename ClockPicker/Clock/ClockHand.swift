@@ -14,12 +14,19 @@ struct ClockHand: View {
     @Binding var clockDate: Date    // the date
     let handType: HandType          // hour or minute
     @Binding var period: Int        // 0=AM or 1=PM
+    
+    @ObservedObject var options = ClockLooks()
 
     @State private var prev = CGPoint.zero
     @State private var pos = CGPoint.zero
     @State private var handlePos = CGPoint.zero
     @State private var handleSize = CGFloat(35)
     
+    @State var handColor = Color.primary
+    @State var handWidth = CGFloat(2)
+    @State var handRatio = CGFloat(1)
+    @State var handleColor = Color.primary
+    @State var handleRimColor = Color.primary
 
     var body: some View {
         
@@ -37,12 +44,12 @@ struct ClockHand: View {
                 let center = self.getCenter(of: geometry.size)
                 let w = 0.08 * min(geometry.size.width, geometry.size.height)
                 path.addRoundedRect(in: CGRect(x: center.x-w, y: center.y-w/2, width: w*2, height: w), cornerSize: CGSize(width: w/2, height: w/2))
-            }.fill(self.handType.color)
+            }.fill(self.options.centerBackgroundColor)
             
             Path { path in
                 let center = self.getCenter(of: geometry.size)
                 path.move(to: center)
-                let length = self.handType.ratio * self.getRadius(geometry.size)
+                let length = self.handRatio * self.getRadius(geometry.size)
                 let theTip = self.getNewPoint(center, length)
                 let handlePoint = self.getNewPoint(center, length-(length * 0.3))
                 path.addLine(to: theTip)
@@ -51,8 +58,8 @@ struct ClockHand: View {
                     self.updateTime(center)
                     self.handlePos = handlePoint
                 }
-            }.stroke(style: StrokeStyle(lineWidth: self.handType.width, lineCap: .round))
-            .fill(self.handType.color)
+            }.stroke(style: StrokeStyle(lineWidth: self.handWidth, lineCap: .round))
+            .fill(self.handColor)
             .onAppear(perform: { self.startHandPos(geometry) })
 
             // the dragging handle
@@ -63,13 +70,20 @@ struct ClockHand: View {
     var dragHandle: some View {
         return ZStack {
             Circle().overlay(
-                Circle().stroke(Color.primary, lineWidth: 4)
-            ).foregroundColor(Color.green)
+                Circle().stroke(self.handleRimColor, lineWidth: self.options.handleRimWidth)
+            ).foregroundColor(self.handleColor)
             .frame(width: handleSize, height: handleSize)
         }
     }
     
     func startHandPos(_ geom: GeometryProxy) {
+        // the looks
+        handColor = handType == .hour ? options.hourHandColor : options.minuteHandColor
+        handWidth = handType == .hour ? options.hourHandleWidth : options.minuteHandleWidth
+        handRatio = handType == .hour ? options.hourRatio : options.minuteRatio
+        handleColor = handType == .hour ? options.hourHandleColor : options.minuteHandleColor
+        handleRimColor = handType == .hour ? options.hourHandleRimColor : options.minuteHandleRimColor
+        
         let center = getCenter(of: geom.size)
         prev = CGPoint.zero
         // place the hands at their start position
@@ -200,35 +214,3 @@ struct ClockHand: View {
     }
     
 }
-
-// --------------------------------------------------------------------
-
-enum HandType {
-    
-    case hour
-    case minute
-    
-    var color: Color {
-        switch self {
-            case .hour: return .primary
-            case .minute: return .secondary
-        }
-    }
-    
-    var ratio: CGFloat {
-        if self == .hour {
-            return 0.6
-        } else {
-            return 0.92
-        }
-    }
-    
-    var width: CGFloat {
-        switch self {
-            case .hour: return 8
-            case .minute: return 4
-        }
-    }
-    
-}
-
