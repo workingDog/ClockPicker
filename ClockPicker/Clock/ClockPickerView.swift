@@ -33,15 +33,15 @@ struct ClockPickerView : View {
     }
     
     var body: some View {
-        Group {
+        GeometryReader { geometry in
             ZStack {
-                Circle().stroke(options.circleColor, lineWidth: options.circleWidth)
-                .overlay(Circle().fill(options.backgroundColor))
-                ClockFace(period: $period, options: options)
-                ClockHand(clockDate: $clockDate, handType: .hour, period: $period, options: options)
-                ClockHand(clockDate: $clockDate, handType: .minute, period: $period, options: options)
-                Text(asText()).foregroundColor(options.centerForegroundColor)
-                periodPicker.offset(x: 0, y: 60)
+                Circle().stroke(self.options.circleColor, lineWidth: self.options.circleWidth)
+                    .overlay(Circle().fill(self.options.backgroundColor))
+                ClockFace(period: self.$period, options: self.options)
+                ClockHand(clockDate: self.$clockDate, handType: .hour, period: self.$period, options: self.options)
+                ClockHand(clockDate: self.$clockDate, handType: .minute, period: self.$period, options: self.options)
+                Text(self.asText()).foregroundColor(self.options.centerForegroundColor).font(self.options.centerTextFont)
+                self.periodPicker.offset(x: 0, y: 0.08*geometry.size.height)
             }
             .padding()
             .aspectRatio(1, contentMode: .fit)

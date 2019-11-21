@@ -28,15 +28,24 @@ struct ContentView: View {
         }
         .onAppear(perform: loadData)
     }
-    
+
     func loadData() {
-//        options.backgroundColor = .purple
-//        options.tickMarkColor = .yellow
-//        options.hourHandColor = .black
-//        options.minuteHandColor = .white
-//        options.labelColor = .black
-//        options.labelFont = Font.custom("TimesNewRomanPS-BoldItalicMT", size: 40)
+        options.backgroundColor = .yellow
+        options.tickMarkColor = .blue
+        options.hourHandColor = .black
+        options.minuteHandColor = .gray
+        options.labelColor = .black
+        options.labelFont = Font.custom("Didot-Bold", size: 30)
+        options.circleWidth = CGFloat(12)
+        options.hourHandleColor = .blue
+        options.minuteHandleColor = .blue
+        options.centerBackgroundColor = .blue
+        options.centerTextFont = Font.custom("Helvetica", size: 20)
+        options.hourHandWidth = CGFloat(10)
+        options.minuteHandWidth = CGFloat(8)
+        options.handleSize = CGFloat(25)
     }
+    
 
     func getDateString() -> String {
         let formatter = DateFormatter()

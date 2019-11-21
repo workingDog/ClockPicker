@@ -20,7 +20,6 @@ struct ClockHand: View {
     @State private var prev = CGPoint.zero
     @State private var pos = CGPoint.zero
     @State private var handlePos = CGPoint.zero
-    @State private var handleSize = CGFloat(35)
     
     @State var handColor = Color.primary
     @State var handWidth = CGFloat(2)
@@ -72,14 +71,14 @@ struct ClockHand: View {
             Circle().overlay(
                 Circle().stroke(self.handleRimColor, lineWidth: self.options.handleRimWidth)
             ).foregroundColor(self.handleColor)
-            .frame(width: handleSize, height: handleSize)
+                .frame(width: self.options.handleSize, height: self.options.handleSize)
         }
     }
     
     func startHandPos(_ geom: GeometryProxy) {
         // the looks
         handColor = handType == .hour ? options.hourHandColor : options.minuteHandColor
-        handWidth = handType == .hour ? options.hourHandleWidth : options.minuteHandleWidth
+        handWidth = handType == .hour ? options.hourHandWidth : options.minuteHandWidth
         handRatio = handType == .hour ? options.hourRatio : options.minuteRatio
         handleColor = handType == .hour ? options.hourHandleColor : options.minuteHandleColor
         handleRimColor = handType == .hour ? options.hourHandleRimColor : options.minuteHandleRimColor
