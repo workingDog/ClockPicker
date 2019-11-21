@@ -52,5 +52,39 @@ struct ClockMarker: Hashable {
             ClockMarker(degrees: 330, label: "23")
         ]
     }
+    
+    static func romanPMlabelSet() -> [ClockMarker] {
+        return [
+            ClockMarker(degrees: 0, label: "XII"),
+            ClockMarker(degrees: 30, label: "XIII"),
+            ClockMarker(degrees: 60, label: "XIV"),
+            ClockMarker(degrees: 90, label: "XV"),
+            ClockMarker(degrees: 120, label: "XVI"),
+            ClockMarker(degrees: 150, label: "XVII"),
+            ClockMarker(degrees: 180, label: "XVIII"),
+            ClockMarker(degrees: 210, label: "XIX"),
+            ClockMarker(degrees: 240, label: "XX"),
+            ClockMarker(degrees: 270, label: "XXI"),
+            ClockMarker(degrees: 300, label: "XXII"),
+            ClockMarker(degrees: 330, label: "XXIII")
+        ]
+    }
+    
+    static func romanAMlabelSet() -> [ClockMarker] {
+        return [
+            ClockMarker(degrees: 0, label: "XII"),
+            ClockMarker(degrees: 30, label: "I"),
+            ClockMarker(degrees: 60, label: "II"),
+            ClockMarker(degrees: 90, label: "III"),
+            ClockMarker(degrees: 120, label: "IV"),
+            ClockMarker(degrees: 150, label: "V"),
+            ClockMarker(degrees: 180, label: "VI"),
+            ClockMarker(degrees: 210, label: "VII"),
+            ClockMarker(degrees: 240, label: "VIII"),
+            ClockMarker(degrees: 270, label: "IX"),
+            ClockMarker(degrees: 300, label: "X"),
+            ClockMarker(degrees: 330, label: "XI")
+        ]
+    }
 
 }

@@ -28,7 +28,7 @@ struct ClockFace: View {
             
             // the hour labels
             ZStack {
-                ForEach(self.period == 1 ? ClockMarker.PMlabelSet() : ClockMarker.AMlabelSet(), id: \.self) { marker in
+                 ForEach(self.period == 1 ? ClockMarker.PMlabelSet() : ClockMarker.AMlabelSet(), id: \.self) { marker in
                     ClockLabelView(marker: marker, paddingValue: CGFloat(geometry.size.width * 0.80), options: self.options)
                         .position(CGPoint(x: geometry.size.width / 2, y: geometry.size.height / 2))
                 }
