@@ -30,10 +30,12 @@ struct ContentView: View {
     }
     
     func loadData() {
-      //  options.backgroundColor = Color.pink
-      //  options.tickMarkColor = Color.red
-      //  options.hourHandColor = .red
-      //  options.minuteHandColor = .yellow
+//        options.backgroundColor = .purple
+//        options.tickMarkColor = .yellow
+//        options.hourHandColor = .black
+//        options.minuteHandColor = .white
+//        options.labelColor = .black
+//        options.labelFont = Font.custom("TimesNewRomanPS-BoldItalicMT", size: 40)
     }
 
     func getDateString() -> String {
