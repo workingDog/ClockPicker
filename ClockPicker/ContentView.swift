@@ -32,18 +32,18 @@ struct ContentView: View {
     func loadData() {
         options.backgroundColor = .yellow
         options.tickMarkColor = .blue
-        options.hourHandColor = .black
-        options.minuteHandColor = .gray
+        options.hourHandColor = .blue
+        options.minuteHandColor = .blue
         options.labelColor = .black
         options.labelFont = Font.custom("Didot-Bold", size: 30)
-        options.circleWidth = CGFloat(12)
+        options.circleWidth = CGFloat(20)
         options.hourHandleColor = .blue
         options.minuteHandleColor = .blue
         options.centerBackgroundColor = .blue
         options.centerTextFont = Font.custom("Helvetica", size: 20)
         options.hourHandWidth = CGFloat(10)
         options.minuteHandWidth = CGFloat(8)
-        options.handleSize = CGFloat(25)
+        options.handleSize = CGFloat(35)
     }
     
 

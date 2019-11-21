@@ -26,4 +26,4 @@ That's it, very simple.
 Can be used in SwiftUI ios and mac catalyst applications.
 
 
-![im01](picture1.png)   ![im02](picture2.png) 
+![im01](picture1.png)   ![im02](picture2.png)  ![im03](picture3.png) 
