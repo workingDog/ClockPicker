@@ -61,7 +61,7 @@ struct ClockHand: View {
             .fill(self.handColor)
             .onAppear(perform: { self.startHandPos(geometry) })
 
-            // the dragging handle
+            // the drag handle
             self.dragHandle.position(self.handlePos).gesture(drag)
         }
     }
@@ -140,7 +140,7 @@ struct ClockHand: View {
         }
     }
     
-    // change the time according to the period setting
+    // change the hour according to the period setting
     private func adjustClockDate() {
         let theMinutes = Calendar.current.component(.minute, from: clockDate)
         var theHours = Calendar.current.component(.hour, from: clockDate)

@@ -62,7 +62,7 @@ struct ClockPickerView : View {
         return formatter.string(from: clockDate)
     }
     
-    // change the time according to the period setting
+    // change the hour according to the period setting
     func adjustClockDate(_ value: Int) {
         self.period = value
         let theMinutes = Calendar.current.component(.minute, from: clockDate)

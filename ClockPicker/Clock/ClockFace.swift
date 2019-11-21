@@ -37,7 +37,7 @@ struct ClockFace: View {
                 .stroke(self.options.hourTickMarkColor, lineWidth: self.options.hourTickMarkWidth)
                 .rotationEffect(Angle(degrees: Double(n) * 360 / 12))
             }
- 
+            
             // the hour labels
             ZStack {
                  ForEach(self.period == 1 ? ClockMarker.PMlabelSet() : ClockMarker.AMlabelSet(), id: \.self) { marker in

@@ -24,7 +24,7 @@ struct ContentView: View {
                 }
             }
         }.navigationViewStyle(StackNavigationViewStyle())
-         .onAppear(perform: loadData)
+         .onAppear(perform: loadOptions)
     }
     
 //    var body: some View {
@@ -38,10 +38,10 @@ struct ContentView: View {
 //        }.sheet(isPresented: self.$showTime) {
 //            ClockPickerView(date: self.$date, options: self.options)
 //        }
-//        .onAppear(perform: loadData)
+//        .onAppear(perform: loadOptions)
 //    }
 
-    func loadData() {
+    func loadOptions() {
         options.backgroundColor = .yellow
         options.hourTickMarkColor = .blue
         options.hourTickMarkWidth = CGFloat(8)
@@ -62,7 +62,6 @@ struct ContentView: View {
         options.ampmTintColor = UIColor.blue
     }
     
-
     func getDateString() -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd h:mm a "
