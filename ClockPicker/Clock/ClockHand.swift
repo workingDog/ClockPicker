@@ -26,6 +26,10 @@ struct ClockHand: View {
     @State var handRatio = CGFloat(1)
     @State var handleColor = Color.primary
     @State var handleRimColor = Color.primary
+    
+    let impact = UIImpactFeedbackGenerator(style: .light)
+    
+    @State private var prevHour = 0
 
     var body: some View {
         
@@ -65,7 +69,7 @@ struct ClockHand: View {
             self.dragHandle.position(self.handlePos).gesture(drag)
         }
     }
-    
+
     var dragHandle: some View {
         return ZStack {
             Circle().overlay(
@@ -123,6 +127,10 @@ struct ClockHand: View {
             clockDate = newDate
         }
         adjustClockDate()
+        if options.impactFeedbackOn && Calendar.current.component(.hour, from: clockDate) != prevHour {
+            prevHour = Calendar.current.component(.hour, from: clockDate)
+            impact.impactOccurred()
+        }
     }
     
     private func updateClockMinute(_ angleDeg: Float) {

@@ -60,6 +60,7 @@ struct ContentView: View {
         options.minuteHandWidth = CGFloat(8)
         options.handleSize = CGFloat(35)
         options.ampmTintColor = UIColor.blue
+        options.impactFeedbackOn = true
     }
     
     func getDateString() -> String {

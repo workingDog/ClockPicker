@@ -51,4 +51,5 @@ class ClockLooks : ObservableObject {
     @Published var ampmNormalColor: UIColor = UIColor.black
     @Published var ampmTintColor: UIColor = UIColor.black
     
+    @Published var impactFeedbackOn: Bool = false
 }
