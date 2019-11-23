@@ -1,7 +1,9 @@
 
 # SwiftUI Clock Time Picker
 
-**ClockPicker** is a SwiftUI view that displays a clock with the hours and minutes hands.
+## Clock with hands
+
+**ClockPicker** is a SwiftUI view that displays a clock with the hour and minutes hands.
 These hands can be dragged around the clock face to select the desired hour and minutes of your date.
 
 The main element is **ClockPickerView.swift**, see the demo in *ContenView.swift* for how to use it in your code.
@@ -12,7 +14,7 @@ Use it like a *DatePicker*, such as:
     
     ClockPickerView(date: $date)
 
-As the clock hands are changed, the date hours and minutes are updated.
+As the clock hands are changed, the *date* hour and minutes are updated.
 
 To customise the looks of the clock, use 
 
@@ -20,10 +22,18 @@ To customise the looks of the clock, use
     
 and change the options as desired, see  *ContenView.swift*
     
+## Clock without hands
 
-That's it, very simple.
+**ClockPicker** can also display a clock without hands, more suited to iPad and Mac. To display it set the options as:
 
-Can be used in SwiftUI ios and mac catalyst applications.
+    options.withHands = false    
+
+To pick the hour and minutes, tap on the center **hour : minute** to display either the hours or the minutes set.
+
+Note: adjust the sizes and colors using **options** to suit your device, see  *ContenView.swift*
+
+![im01](picture1.png)  ![im03](picture3.png) 
 
 
-![im01](picture1.png)   ![im02](picture2.png)  ![im03](picture3.png) 
+![im04](picture4.png)   ![im05](picture5.png)  
+

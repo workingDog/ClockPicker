@@ -19,6 +19,11 @@ struct ClockPickerView : View {
     @Binding var clockDate: Date
     @ObservedObject var options = ClockLooks()
     
+    @State var showHours = true
+    @State var showMinutes = false
+    
+    @State var hand: HandType = .hour
+    
     @State var period: Int = 0
     let periodTypes = ["AM", "PM"]
     let formatter = DateFormatter()
@@ -37,15 +42,38 @@ struct ClockPickerView : View {
             ZStack {
                 Circle().stroke(self.options.circleColor, lineWidth: self.options.circleWidth)
                     .overlay(Circle().fill(self.options.backgroundColor))
-                ClockFace(period: self.$period, options: self.options)
-                ClockHand(clockDate: self.$clockDate, handType: .hour, period: self.$period, options: self.options)
-                ClockHand(clockDate: self.$clockDate, handType: .minute, period: self.$period, options: self.options)
-                Text(self.asText()).foregroundColor(self.options.centerForegroundColor).font(self.options.centerTextFont)
+                if self.options.withHands {
+                    self.clockWithHands()
+                } else {
+                    self.clockWithoutHands()
+                }
                 self.periodPicker.offset(x: 0, y: 0.08*geometry.size.height)
             }
             .padding()
             .aspectRatio(1, contentMode: .fit)
         }
+    }
+    
+    func clockWithHands() -> AnyView {
+        return AnyView(
+            Group {
+                ClockFace(period: self.$period, options: self.options)
+                ClockHand(clockDate: self.$clockDate, handType: .hour, period: self.$period, options: self.options)
+                ClockHand(clockDate: self.$clockDate, handType: .minute, period: self.$period, options: self.options)
+                Text(self.asText()).foregroundColor(self.options.centerForegroundColor).font(self.options.centerTextFont)
+        })
+    }
+    
+    func clockWithoutHands() -> AnyView {
+        return AnyView(
+            Group {
+                ClockNoHands(clockDate: self.$clockDate, period: self.$period, options: self.options, handType: self.$hand)
+                HStack {
+                    Button(action: {self.hand = .hour}) {Text(self.asHours())}
+                    Text(" : ")
+                    Button(action: {self.hand = .minute}) {Text(self.asMinutes())}
+                }.font(self.options.labelFont)
+        })
     }
     
     var periodPicker: some View {
@@ -57,6 +85,21 @@ struct ClockPickerView : View {
         }.pickerStyle(SegmentedPickerStyle()).scaledToFit()
     }
     
+    func asHours() -> String {
+        var theHours = Calendar.current.component(.hour, from: clockDate)
+        if period == 1 {
+            if theHours < 12 {
+                theHours = theHours + 12
+            }
+        }
+        return String(theHours)
+    }
+    
+    func asMinutes() -> String {
+        formatter.dateFormat = "mm"
+        return formatter.string(from: clockDate)
+    }
+ 
     func asText() -> String {
         formatter.dateFormat = "HH:mm"
         return formatter.string(from: clockDate)

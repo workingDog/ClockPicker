@@ -12,6 +12,8 @@ import SwiftUI
 
 class ClockLooks : ObservableObject {
     
+    @Published var withHands: Bool = true
+    
     @Published var backgroundColor: Color = Color.clear
     
     @Published var circleColor: Color = Color.primary
@@ -21,7 +23,10 @@ class ClockLooks : ObservableObject {
     @Published var hourTickMarkWidth: CGFloat = CGFloat(4)
     
     @Published var minuteDotMarkColor: Color = Color.primary
-    @Published var minuteDotMarkSize: CGFloat = CGFloat(4)
+    @Published var minuteDotMarkSize: CGFloat = CGFloat(10)
+    
+    @Published var hourDotMarkSize: CGFloat = CGFloat(22)
+    @Published var hourDotMarkColor: Color = Color.primary
     
     @Published var labelColor: Color = Color.primary
     @Published var labelFont: Font = Font.custom("Didot-Bold", size: 30)

@@ -11,13 +11,17 @@ import SwiftUI
 struct ContentView: View {
  
     @State var date = Date()
+        // Calendar.current.date(bySettingHour: 9, minute: 59, second: 0, of: Date())!
+
     @State var showTime = false
     
     @ObservedObject var options = ClockLooks()
   
     var body: some View {
         NavigationView {
-            NavigationLink(destination: ClockPickerView(date: self.$date, options: self.options)) {
+            NavigationLink(destination: ClockPickerView(date: self.$date, options: self.options)
+               // .frame(width: 500, height: 500)
+            ) {
                 VStack {
                     Text("Show time")
                     Text(self.getDateString())
@@ -42,11 +46,20 @@ struct ContentView: View {
 //    }
 
     func loadOptions() {
+        
+        // for no hands must adjust some sizes and colors
+//        options.withHands = false
+//        options.minuteDotMarkSize = CGFloat(30)
+//        options.minuteDotMarkColor = .orange
+//        options.hourDotMarkSize = CGFloat(46)
+//        options.hourDotMarkColor = .blue
+        
+        // for clock with hands
         options.backgroundColor = .yellow
         options.hourTickMarkColor = .blue
-        options.hourTickMarkWidth = CGFloat(8)
-        options.minuteDotMarkSize = CGFloat(4)
-        options.minuteDotMarkColor = .black
+        options.hourTickMarkWidth = CGFloat(10)
+        options.hourDotMarkSize = CGFloat(46)
+        options.hourDotMarkColor = .blue
         options.hourHandColor = .blue
         options.minuteHandColor = .blue
         options.labelColor = .black

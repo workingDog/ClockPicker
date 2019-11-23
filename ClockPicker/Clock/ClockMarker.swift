@@ -1,5 +1,5 @@
 //
-//  ClockLabel.swift
+//  ClockMarker.swift
 //  ClockPicker
 //
 //  Created by Ringo Wathelet on 2019/11/18.
