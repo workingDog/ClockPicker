@@ -47,7 +47,7 @@ struct ClockPickerView : View {
                 } else {
                     self.clockWithoutHands()
                 }
-                self.periodPicker.offset(x: 0, y: 0.08*geometry.size.height)
+                self.periodPicker.offset(x: 0, y: 0.06*geometry.size.height)
             }
             .padding()
             .aspectRatio(1, contentMode: .fit)

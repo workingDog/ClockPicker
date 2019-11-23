@@ -22,9 +22,7 @@ struct ClockNoHands: View {
     @State var minuteSet2Highlight = Array(repeating: false, count: 20)
     @State var minuteSet3Highlight = Array(repeating: false, count: 20)
     
-    let hourRimRatio = CGFloat(0.87) 
-    
-    
+
     var body: some View {
         GeometryReader { geometry in
             if self.handType == .hour {
@@ -117,14 +115,14 @@ struct ClockNoHands: View {
                     ).foregroundColor(self.options.hourDotMarkColor)
                         .frame(width: self.options.hourDotMarkSize, height: self.options.hourDotMarkSize)
                         .position(CGPoint(x: geometry.size.width / 2,
-                                          y: self.options.hourDotMarkSize + CGFloat(geometry.size.width * self.hourRimRatio)))
+                                          y: CGFloat(geometry.size.width * 0.9)))
                         .onTapGesture { self.hourTapped(hour: n) }
                     
                     if self.hourHighlight[n] {
                         Circle().stroke(Color.red, lineWidth: 4)
                             .frame(width: self.options.hourDotMarkSize, height: self.options.hourDotMarkSize)
                             .position(CGPoint(x: geometry.size.width / 2,
-                                              y: self.options.hourDotMarkSize + CGFloat(geometry.size.width * self.hourRimRatio)))
+                                              y: CGFloat(geometry.size.width * 0.9)))
                     }
                     
                 }.rotationEffect(Angle(degrees: Double(n-90) * 360 / 12))
@@ -133,7 +131,7 @@ struct ClockNoHands: View {
             ZStack {
                 ForEach(self.period == 1 ? ClockMarker.PMlabelSet() : ClockMarker.AMlabelSet(), id: \.self) { marker in
                     ClockLabelView(marker: marker,
-                                   paddingValue: CGFloat(geometry.size.width * self.hourRimRatio),
+                                   paddingValue: CGFloat(geometry.size.width * 0.8),
                                    options: self.options)
                         .position(CGPoint(x: geometry.size.width / 2, y: geometry.size.height / 2))
                 }

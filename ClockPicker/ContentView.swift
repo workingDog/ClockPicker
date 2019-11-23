@@ -11,16 +11,13 @@ import SwiftUI
 struct ContentView: View {
  
     @State var date = Date()
-        // Calendar.current.date(bySettingHour: 9, minute: 59, second: 0, of: Date())!
-
     @State var showTime = false
-    
     @ObservedObject var options = ClockLooks()
   
     var body: some View {
         NavigationView {
             NavigationLink(destination: ClockPickerView(date: self.$date, options: self.options)
-               // .frame(width: 500, height: 500)
+                .frame(width: 400)
             ) {
                 VStack {
                     Text("Show time")
