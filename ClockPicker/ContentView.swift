@@ -16,9 +16,7 @@ struct ContentView: View {
   
     var body: some View {
         NavigationView {
-            NavigationLink(destination: ClockPickerView(date: self.$date, options: self.options)
-                .frame(width: 400)
-            ) {
+            NavigationLink(destination: ClockPickerView(date: self.$date, options: self.options)) {
                 VStack {
                     Text("Show time")
                     Text(self.getDateString())
