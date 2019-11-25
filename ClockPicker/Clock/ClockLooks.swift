@@ -55,6 +55,11 @@ class ClockLooks : ObservableObject {
     @Published var ampmSelectedColor: UIColor = UIColor.white
     @Published var ampmNormalColor: UIColor = UIColor.black
     @Published var ampmTintColor: UIColor = UIColor.black
+    // x and y offset from clock center, of the AM:PM picker as the proportion of the clock size
+    @Published var ampmPickerXoffset = CGFloat(0.0)
+    @Published var ampmPickerYoffset = CGFloat(0.06)
     
     @Published var impactFeedbackOn: Bool = false
+    
+
 }
