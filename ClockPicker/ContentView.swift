@@ -70,7 +70,7 @@ struct ContentView: View {
         options.ampmTintColor = UIColor.blue
         options.impactFeedbackOn = true
     }
-    
+
     func getDateString() -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd h:mm a "

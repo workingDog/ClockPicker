@@ -15,7 +15,7 @@ enum HandType {
 }
 
 struct ClockPickerView : View {
-
+    
     @Binding var clockDate: Date
     @ObservedObject var options = ClockLooks()
     
@@ -27,7 +27,7 @@ struct ClockPickerView : View {
     @State var period: Int = 0
     let periodTypes = ["AM", "PM"]
     let formatter = DateFormatter()
-
+    
     init(date: Binding<Date>, options: ClockLooks = ClockLooks()) {
         self._clockDate = date
         self.options = options
@@ -42,46 +42,43 @@ struct ClockPickerView : View {
             ZStack {
                 Circle().stroke(self.options.circleColor, lineWidth: self.options.circleWidth)
                     .overlay(Circle().fill(self.options.backgroundColor))
-                if self.options.withHands {
-                    self.clockWithHands()
-                } else {
-                    self.clockWithoutHands()
-                }
-                self.periodPicker.offset(x: self.options.ampmPickerXoffset*geometry.size.width, y: self.options.ampmPickerYoffset*geometry.size.height)
+                
+                self.options.withHands ? AnyView(self.clockWithHands) : AnyView(self.clockWithoutHands)
+                
+                self.periodPicker.offset(x: self.options.ampmPickerXoffset*geometry.size.width,
+                                         y: self.options.ampmPickerYoffset*geometry.size.height)
             }
             .padding()
             .aspectRatio(1, contentMode: .fit)
         }
     }
     
-    func clockWithHands() -> AnyView {
-        return AnyView(
-            Group {
-                ClockFace(period: self.$period, options: self.options)
-                ClockHand(clockDate: self.$clockDate, handType: .hour, period: self.$period, options: self.options)
-                ClockHand(clockDate: self.$clockDate, handType: .minute, period: self.$period, options: self.options)
-                Text(self.asText()).foregroundColor(self.options.centerForegroundColor).font(self.options.centerTextFont)
-        })
+    var clockWithHands: some View {
+        Group {
+            ClockFace(period: self.$period, options: self.options)
+            ClockHand(clockDate: self.$clockDate, handType: .hour, period: self.$period, options: self.options)
+            ClockHand(clockDate: self.$clockDate, handType: .minute, period: self.$period, options: self.options)
+            Text(self.asText()).foregroundColor(self.options.centerForegroundColor).font(self.options.centerTextFont)
+        }
     }
     
-    func clockWithoutHands() -> AnyView {
-        return AnyView(
-            Group {
-                ClockNoHands(clockDate: self.$clockDate, period: self.$period, options: self.options, handType: self.$hand)
-                HStack {
-                    Button(action: {self.hand = .hour}) {Text(self.asHours())}
-                    Text(" : ")
-                    Button(action: {self.hand = .minute}) {Text(self.asMinutes())}
-                }.font(self.options.labelFont)
-        })
+    var clockWithoutHands: some View {
+        Group {
+            ClockNoHands(clockDate: self.$clockDate, period: self.$period, options: self.options, handType: self.$hand)
+            HStack {
+                Button(action: {self.hand = .hour}) {Text(self.asHours())}
+                Text(" : ")
+                Button(action: {self.hand = .minute}) {Text(self.asMinutes())}
+            }.font(self.options.labelFont)
+        }
     }
     
     var periodPicker: some View {
         Picker(selection: Binding<Int>(
-        get: { self.period }, set: { self.adjustClockDate($0) }), label: Text("")) {
-            ForEach(0..<periodTypes.count) {
-                Text(self.periodTypes[$0]).tag($0)
-            }
+            get: { self.period }, set: { self.adjustClockDate($0) }), label: Text("")) {
+                ForEach(0..<periodTypes.count) {
+                    Text(self.periodTypes[$0]).tag($0)
+                }
         }.pickerStyle(SegmentedPickerStyle()).scaledToFit()
     }
     
@@ -99,7 +96,7 @@ struct ClockPickerView : View {
         formatter.dateFormat = "mm"
         return formatter.string(from: clockDate)
     }
- 
+    
     func asText() -> String {
         formatter.dateFormat = "HH:mm"
         return formatter.string(from: clockDate)
@@ -128,5 +125,5 @@ struct ClockPickerView : View {
             }
         }
     }
-     
+    
 }
