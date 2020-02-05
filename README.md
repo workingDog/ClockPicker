@@ -1,12 +1,16 @@
 
 # SwiftUI Clock Time Picker
 
+
+An exampe of using [**ClockTimePicker**](https://github.com/workingDog/ClockTimePicker)
+
+
 ## Clock with hands
 
-**ClockPicker** is a SwiftUI view that displays a clock with the hour and minutes hands.
+[**ClockTimePicker**](https://github.com/workingDog/ClockTimePicker) is a SwiftUI view that displays a clock with the hour and minutes hands.
 These hands can be dragged around the clock face to select the desired hour and minutes of your date.
 
-To use, include the files in the "Sources/ClockPicker" folder into your project. See **ContenView.swift** in the Example for how to use it in your code.
+See **ContenView.swift** for how to use it in your code.
 
 The main element is **ClockPickerView.swift**.
 
@@ -26,7 +30,7 @@ and change the options as desired, see  *ContenView.swift*
     
 ## Clock without hands
 
-**ClockPicker** can also display a clock without hands, more suited to iPad and Mac. To display it set the options as:
+**ClockTimePicker** can also display a clock without hands, more suited to iPad and Mac. To display it set the options as:
 
     options.withHands = false    
 

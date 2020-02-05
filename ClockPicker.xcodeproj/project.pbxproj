@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,22 +12,15 @@
 		C702954D238207C9003742F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C702954C238207C9003742F4 /* Assets.xcassets */; };
 		C7029550238207C9003742F4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C702954F238207C9003742F4 /* Preview Assets.xcassets */; };
 		C7029553238207C9003742F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7029551238207C9003742F4 /* LaunchScreen.storyboard */; };
-		C702955E23820832003742F4 /* ClockFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = C702955B23820831003742F4 /* ClockFace.swift */; };
-		C702955F23820832003742F4 /* ClockHand.swift in Sources */ = {isa = PBXBuildFile; fileRef = C702955C23820831003742F4 /* ClockHand.swift */; };
-		C702956023820832003742F4 /* ClockPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C702955D23820831003742F4 /* ClockPickerView.swift */; };
 		C70AEA9723866224007D9C64 /* picture3.png in Resources */ = {isa = PBXBuildFile; fileRef = C70AEA9623866224007D9C64 /* picture3.png */; };
-		C73ABE6D2388C3DC00FB8133 /* ClockNoHands.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73ABE6C2388C3DC00FB8133 /* ClockNoHands.swift */; };
 		C746EF5123838DE000696342 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C746EF5023838DE000696342 /* ContentView.swift */; };
-		C75D1442238609D500DC9536 /* ClockLooks.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75D1441238609D500DC9536 /* ClockLooks.swift */; };
-		C7C5A5192382733A00D1DEA4 /* ClockLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C5A5182382733A00D1DEA4 /* ClockLabelView.swift */; };
-		C7C5A51B238273DF00D1DEA4 /* ClockMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C5A51A238273DF00D1DEA4 /* ClockMarker.swift */; };
+		C77197AC23EAA8810014D378 /* ClockTimePicker in Frameworks */ = {isa = PBXBuildFile; productRef = C77197AB23EAA8810014D378 /* ClockTimePicker */; };
 		C7CEA5712388DF070044EA8B /* picture4.png in Resources */ = {isa = PBXBuildFile; fileRef = C7CEA56F2388DF060044EA8B /* picture4.png */; };
 		C7CEA5722388DF070044EA8B /* picture5.png in Resources */ = {isa = PBXBuildFile; fileRef = C7CEA5702388DF070044EA8B /* picture5.png */; };
 		C7E544862384B9DF00D0602A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = C7E544852384B9DF00D0602A /* README.md */; };
 		C7E544882384BCD200D0602A /* picture1.png in Resources */ = {isa = PBXBuildFile; fileRef = C7E544872384BCD100D0602A /* picture1.png */; };
 		C7E5448A2384BE6F00D0602A /* License.txt in Resources */ = {isa = PBXBuildFile; fileRef = C7E544892384BE6F00D0602A /* License.txt */; };
 		C7E59C8D2386054000434B06 /* picture2.png in Resources */ = {isa = PBXBuildFile; fileRef = C7E59C8C2386054000434B06 /* picture2.png */; };
-		C7F39CBA23EA468E00167D19 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F39CB923EA468E00167D19 /* Package.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,23 +31,15 @@
 		C702954F238207C9003742F4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C7029552238207C9003742F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C7029554238207C9003742F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C702955B23820831003742F4 /* ClockFace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockFace.swift; sourceTree = "<group>"; };
-		C702955C23820831003742F4 /* ClockHand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockHand.swift; sourceTree = "<group>"; };
-		C702955D23820831003742F4 /* ClockPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockPickerView.swift; sourceTree = "<group>"; };
 		C70AEA9623866224007D9C64 /* picture3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = picture3.png; sourceTree = "<group>"; };
-		C73ABE6C2388C3DC00FB8133 /* ClockNoHands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockNoHands.swift; sourceTree = "<group>"; };
 		C746EF5023838DE000696342 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		C75D1441238609D500DC9536 /* ClockLooks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockLooks.swift; sourceTree = "<group>"; };
 		C7A09E5D238208B000B4B4B5 /* ClockPicker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ClockPicker.entitlements; sourceTree = "<group>"; };
-		C7C5A5182382733A00D1DEA4 /* ClockLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockLabelView.swift; sourceTree = "<group>"; };
-		C7C5A51A238273DF00D1DEA4 /* ClockMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockMarker.swift; sourceTree = "<group>"; };
 		C7CEA56F2388DF060044EA8B /* picture4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = picture4.png; sourceTree = "<group>"; };
 		C7CEA5702388DF070044EA8B /* picture5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = picture5.png; sourceTree = "<group>"; };
 		C7E544852384B9DF00D0602A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C7E544872384BCD100D0602A /* picture1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = picture1.png; sourceTree = "<group>"; };
 		C7E544892384BE6F00D0602A /* License.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = License.txt; sourceTree = "<group>"; };
 		C7E59C8C2386054000434B06 /* picture2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = picture2.png; sourceTree = "<group>"; };
-		C7F39CB923EA468E00167D19 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C77197AC23EAA8810014D378 /* ClockTimePicker in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,9 +58,7 @@
 			isa = PBXGroup;
 			children = (
 				C7F4ECBB23EA4325009ED9A1 /* Images */,
-				C7F4ECBA23EA4309009ED9A1 /* Sources */,
 				C7E544892384BE6F00D0602A /* License.txt */,
-				C7F39CB923EA468E00167D19 /* Package.swift */,
 				C7E544852384B9DF00D0602A /* README.md */,
 				C7029545238207C9003742F4 /* Example */,
 				C7029544238207C9003742F4 /* Products */,
@@ -112,28 +96,6 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		C702955A23820831003742F4 /* ClockPicker */ = {
-			isa = PBXGroup;
-			children = (
-				C702955D23820831003742F4 /* ClockPickerView.swift */,
-				C702955B23820831003742F4 /* ClockFace.swift */,
-				C702955C23820831003742F4 /* ClockHand.swift */,
-				C7C5A5182382733A00D1DEA4 /* ClockLabelView.swift */,
-				C7C5A51A238273DF00D1DEA4 /* ClockMarker.swift */,
-				C75D1441238609D500DC9536 /* ClockLooks.swift */,
-				C73ABE6C2388C3DC00FB8133 /* ClockNoHands.swift */,
-			);
-			path = ClockPicker;
-			sourceTree = "<group>";
-		};
-		C7F4ECBA23EA4309009ED9A1 /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-				C702955A23820831003742F4 /* ClockPicker */,
-			);
-			path = Sources;
-			sourceTree = "<group>";
-		};
 		C7F4ECBB23EA4325009ED9A1 /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -162,6 +124,9 @@
 			dependencies = (
 			);
 			name = ClockPicker;
+			packageProductDependencies = (
+				C77197AB23EAA8810014D378 /* ClockTimePicker */,
+			);
 			productName = ClockPicker;
 			productReference = C7029543238207C9003742F4 /* ClockPicker.app */;
 			productType = "com.apple.product-type.application";
@@ -190,6 +155,9 @@
 				Base,
 			);
 			mainGroup = C702953A238207C9003742F4;
+			packageReferences = (
+				C77197AA23EAA8810014D378 /* XCRemoteSwiftPackageReference "ClockTimePicker" */,
+			);
 			productRefGroup = C7029544238207C9003742F4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -224,16 +192,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C7C5A5192382733A00D1DEA4 /* ClockLabelView.swift in Sources */,
 				C7029547238207C9003742F4 /* AppDelegate.swift in Sources */,
-				C75D1442238609D500DC9536 /* ClockLooks.swift in Sources */,
-				C702956023820832003742F4 /* ClockPickerView.swift in Sources */,
-				C7C5A51B238273DF00D1DEA4 /* ClockMarker.swift in Sources */,
-				C702955E23820832003742F4 /* ClockFace.swift in Sources */,
-				C73ABE6D2388C3DC00FB8133 /* ClockNoHands.swift in Sources */,
 				C746EF5123838DE000696342 /* ContentView.swift in Sources */,
-				C702955F23820832003742F4 /* ClockHand.swift in Sources */,
-				C7F39CBA23EA468E00167D19 /* Package.swift in Sources */,
 				C7029549238207C9003742F4 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -434,6 +394,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C77197AA23EAA8810014D378 /* XCRemoteSwiftPackageReference "ClockTimePicker" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/workingDog/ClockTimePicker.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C77197AB23EAA8810014D378 /* ClockTimePicker */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C77197AA23EAA8810014D378 /* XCRemoteSwiftPackageReference "ClockTimePicker" */;
+			productName = ClockTimePicker;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C702953B238207C9003742F4 /* Project object */;
 }
