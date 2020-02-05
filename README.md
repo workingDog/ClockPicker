@@ -32,8 +32,8 @@ To pick the hour and minutes, tap on the center **hour : minute** to display eit
 
 Note: adjust the sizes and colors using **options** to suit your device, see  *ContenView.swift*
 
-![im01](picture1.png)  ![im03](picture3.png) 
+![im01](Images/picture1.png)  ![im03](Images/picture3.png) 
 
 
-![im04](picture4.png)   ![im05](picture5.png)  
+![im04](Images/picture4.png)   ![im05](Images/picture5.png)  
 

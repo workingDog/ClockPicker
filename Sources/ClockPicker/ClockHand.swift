@@ -1,6 +1,6 @@
 //
 //  ClockHand.swift
-//  Clock
+//  ClockPicker
 //
 //  Created by Ringo Wathelet on 2019/11/18.
 //  Copyright © 2019 Ringo Wathelet. All rights reserved.
