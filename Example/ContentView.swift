@@ -70,11 +70,7 @@ struct ContentView: View {
         options.handleSize = CGFloat(35)
         options.ampmTintColor = UIColor.blue
         options.impactFeedbackOn = true
-        
-        let uuid = UUID().uuidString
-        print(uuid)
-        
-        
+  
     }
 
     func getDateString() -> String {

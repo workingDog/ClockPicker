@@ -14,7 +14,7 @@
 		C7029553238207C9003742F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7029551238207C9003742F4 /* LaunchScreen.storyboard */; };
 		C70AEA9723866224007D9C64 /* picture3.png in Resources */ = {isa = PBXBuildFile; fileRef = C70AEA9623866224007D9C64 /* picture3.png */; };
 		C746EF5123838DE000696342 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C746EF5023838DE000696342 /* ContentView.swift */; };
-		C77197AC23EAA8810014D378 /* ClockTimePicker in Frameworks */ = {isa = PBXBuildFile; productRef = C77197AB23EAA8810014D378 /* ClockTimePicker */; };
+		C7BD503F23EAB42E000886FC /* ClockTimePicker in Frameworks */ = {isa = PBXBuildFile; productRef = C7BD503E23EAB42E000886FC /* ClockTimePicker */; };
 		C7CEA5712388DF070044EA8B /* picture4.png in Resources */ = {isa = PBXBuildFile; fileRef = C7CEA56F2388DF060044EA8B /* picture4.png */; };
 		C7CEA5722388DF070044EA8B /* picture5.png in Resources */ = {isa = PBXBuildFile; fileRef = C7CEA5702388DF070044EA8B /* picture5.png */; };
 		C7E544862384B9DF00D0602A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = C7E544852384B9DF00D0602A /* README.md */; };
@@ -47,7 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C77197AC23EAA8810014D378 /* ClockTimePicker in Frameworks */,
+				C7BD503F23EAB42E000886FC /* ClockTimePicker in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,7 +125,7 @@
 			);
 			name = ClockPicker;
 			packageProductDependencies = (
-				C77197AB23EAA8810014D378 /* ClockTimePicker */,
+				C7BD503E23EAB42E000886FC /* ClockTimePicker */,
 			);
 			productName = ClockPicker;
 			productReference = C7029543238207C9003742F4 /* ClockPicker.app */;
@@ -156,7 +156,7 @@
 			);
 			mainGroup = C702953A238207C9003742F4;
 			packageReferences = (
-				C77197AA23EAA8810014D378 /* XCRemoteSwiftPackageReference "ClockTimePicker" */,
+				C7BD503D23EAB42E000886FC /* XCRemoteSwiftPackageReference "ClockTimePicker" */,
 			);
 			productRefGroup = C7029544238207C9003742F4 /* Products */;
 			projectDirPath = "";
@@ -396,20 +396,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		C77197AA23EAA8810014D378 /* XCRemoteSwiftPackageReference "ClockTimePicker" */ = {
+		C7BD503D23EAB42E000886FC /* XCRemoteSwiftPackageReference "ClockTimePicker" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/workingDog/ClockTimePicker.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.2;
+				minimumVersion = 1.0.3;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		C77197AB23EAA8810014D378 /* ClockTimePicker */ = {
+		C7BD503E23EAB42E000886FC /* ClockTimePicker */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C77197AA23EAA8810014D378 /* XCRemoteSwiftPackageReference "ClockTimePicker" */;
+			package = C7BD503D23EAB42E000886FC /* XCRemoteSwiftPackageReference "ClockTimePicker" */;
 			productName = ClockTimePicker;
 		};
 /* End XCSwiftPackageProductDependency section */
