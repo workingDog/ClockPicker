@@ -1,11 +1,3 @@
-//
-//  Package.swift
-//  ClockPicker
-//
-//  Created by Ringo Wathelet on 2020/02/05.
-//  Copyright © 2020 Ringo Wathelet. All rights reserved.
-//
-
 // swift-tools-version:5.1
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
@@ -16,6 +8,7 @@
 //    name: "ClockPicker",
 //    platforms: [
 //        .iOS(.v13),
+//        .macOS(.v10_15)
 //    ],
 //    products: [
 //        // Products define the executables and libraries produced by a package, and make them visible to other packages.
