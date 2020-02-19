@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "ClockTimePicker",
+        "repositoryURL": "https://github.com/workingDog/ClockTimePicker.git",
+        "state": {
+          "branch": null,
+          "revision": "ae52aa5a2ba15436049faec86d45c9de03294581",
+          "version": "1.0.3"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

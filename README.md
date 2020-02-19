@@ -2,8 +2,7 @@
 # SwiftUI Clock Time Picker
 
 
-An exampe of using [**ClockTimePicker**](https://github.com/workingDog/ClockTimePicker)
-
+An exampe of using [**ClockTimePicker**](https://github.com/workingDog/ClockTimePicker) library.
 
 ## Clock with hands
 
@@ -37,6 +36,8 @@ and change the options as desired, see  *ContenView.swift*
 To pick the hour and minutes, tap on the center **hour : minute** to display either the hours or the minutes set.
 
 Note: adjust the sizes and colors using **options** to suit your device, see  *ContenView.swift*
+
+## Screenshots
 
 ![im01](Images/picture1.png)  ![im03](Images/picture3.png) 
 
