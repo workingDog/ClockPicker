@@ -1,4 +1,15 @@
 
+.column {
+  float: left;
+  width: 25.0%;
+  padding: 5px;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
 
 <div class="row">
   <div class="column">
