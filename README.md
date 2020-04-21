@@ -1,6 +1,6 @@
 
 
-<img src="https://github.com/workingDog/ClockTimePicker/Images/picture1.png"  width="100"  height="100"/>
+<img src="https://github.com/workingDog/ClockPicker/Images/picture1.png"  width="100"  height="100"/>
 
 
 # SwiftUI Clock Time Picker
