@@ -1,16 +1,16 @@
 
 <div class="row">
   <div class="column">
-    <img src="Images/picture1.png"  alt="Clock image1" width="200"  height="200" style ="  float: left; width: 25.0%; padding: 5px;" />
+    <img src="Images/picture1.png"  width="200"  height="200" style="float: left; width: 25%; margin-right: 1%; margin-bottom: 0.5em;">
   </div>
   <div class="column">
-    <img src="Images/picture3.png"  alt="Clock image1" width="200"  height="200" style ="  float: left; width: 25.0%; padding: 5px;"/>
+    <img src="Images/picture3.png"  width="200"  height="200" style="float: left; width: 25%; margin-right: 1%; margin-bottom: 0.5em;">
   </div>
   <div class="column">
-    <img src="Images/picture4.png"  alt="Clock image1" width="200"  height="200" style ="  float: left; width: 25.0%; padding: 5px;"/>
+    <img src="Images/picture4.png"  width="200"  height="200" style="float: left; width: 25%; margin-right: 1%; margin-bottom: 0.5em;">
   </div>
   <div class="column">
-    <img src="Images/picture5.png"  alt="Clock image1" width="200"  height="200" style ="  float: left; width: 25.0%; padding: 5px;"/>
+    <img src="Images/picture5.png"  width="200"  height="200" style="float: left; width: 25%; margin-right: 1%; margin-bottom: 0.5em;">
   </div>
 </div>
 
