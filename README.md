@@ -1,13 +1,12 @@
 
+# SwiftUI Clock Time Picker
+
 <p float="left">
   <img src="Images/picture1.png"  width="200"  height="200" />
   <img src="Images/picture3.png"  width="200"  height="200" /> 
   <img src="Images/picture4.png"  width="200"  height="200" />
   <img src="Images/picture5.png"  width="200"  height="200" />
 </p>
-
-# SwiftUI Clock Time Picker
-
 
 An exampe of using [**ClockTimePicker**](https://github.com/workingDog/ClockTimePicker) library.
 
