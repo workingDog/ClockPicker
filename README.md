@@ -1,9 +1,9 @@
 
 
-<img src="https://github.com/workingDog/ClockPicker/Images/picture1.png"  alt="Clock image1" width="100"  height="100"/>
-
-<img src="Images/picture1.png"  alt="Clock image1" width="100"  height="100"/>
-
+<img src="Images/picture1.png"  alt="Clock image1" width="200"  height="200"/>
+<img src="Images/picture3.png"  alt="Clock image1" width="200"  height="200"/>
+<img src="Images/picture4.png"  alt="Clock image1" width="200"  height="200"/>
+<img src="Images/picture5.png"  alt="Clock image1" width="200"  height="200"/>
 
 
 # SwiftUI Clock Time Picker
