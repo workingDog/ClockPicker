@@ -1,10 +1,19 @@
 
 
-<img src="Images/picture1.png"  alt="Clock image1" width="200"  height="200"/>
-<img src="Images/picture3.png"  alt="Clock image1" width="200"  height="200"/>
-<img src="Images/picture4.png"  alt="Clock image1" width="200"  height="200"/>
-<img src="Images/picture5.png"  alt="Clock image1" width="200"  height="200"/>
-
+<div class="row">
+  <div class="column">
+    <img src="Images/picture1.png"  alt="Clock image1" width="200"  height="200"/>
+  </div>
+  <div class="column">
+    <img src="Images/picture3.png"  alt="Clock image1" width="200"  height="200"/>
+  </div>
+  <div class="column">
+    <img src="Images/picture4.png"  alt="Clock image1" width="200"  height="200"/>
+  </div>
+  <div class="column">
+    <img src="Images/picture5.png"  alt="Clock image1" width="200"  height="200"/>
+  </div>
+</div>
 
 # SwiftUI Clock Time Picker
 
