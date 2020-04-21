@@ -15,31 +15,31 @@ struct ContentView: View {
     @State var showTime = false
     @ObservedObject var options = ClockLooks()
   
-    var body: some View {
-        NavigationView {
-            NavigationLink(destination: ClockPickerView(date: self.$date, options: self.options)) {
-                VStack {
-                    Text("Show time")
-                    Text(self.getDateString())
-                }
-            }
-        }.navigationViewStyle(StackNavigationViewStyle())
-         .onAppear(perform: loadOptions)
-    }
-    
 //    var body: some View {
-//        Group {
-//            Button(action: {self.showTime.toggle()} ) {
+//        NavigationView {
+//            NavigationLink(destination: ClockPickerView(date: self.$date, options: self.options)) {
 //                VStack {
 //                    Text("Show time")
 //                    Text(self.getDateString())
 //                }
 //            }
-//        }.sheet(isPresented: self.$showTime) {
-//            ClockPickerView(date: self.$date, options: self.options)
-//        }
-//        .onAppear(perform: loadOptions)
+//        }.navigationViewStyle(StackNavigationViewStyle())
+//         .onAppear(perform: loadOptions)
 //    }
+    
+    var body: some View {
+        Group {
+            Button(action: {self.showTime.toggle()} ) {
+                VStack {
+                    Text("Show time")
+                    Text(self.getDateString())
+                }
+            }
+        }.sheet(isPresented: self.$showTime) {
+            ClockPickerView(date: self.$date, options: self.options)
+        }
+        .onAppear(perform: loadOptions)
+    }
 
     func loadOptions() {
         
