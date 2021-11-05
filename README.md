@@ -1,5 +1,5 @@
 
-# SwiftUI Clock Time Picker
+# SwiftUI Clock Time Picker example
 
 <p float="left">
   <img src="Images/picture1.png"  width="200"  height="200" />
